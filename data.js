@@ -7,10 +7,10 @@ const PHILOSOPHERS = [
     tagline: "The unexamined life is not worth living",
     image: "socrates",
     color: "#c8a97e",
-    summary: "Socrates wrote nothing himself — we know him through Plato's dialogues. He developed the method of elenctic questioning (the Socratic method): a relentless probing of assumptions until the interlocutor realises they don't actually know what they thought they knew.",
+    summary: "Socrates wrote nothing himself - we know him through Plato's dialogues. He developed the method of elenctic questioning (the Socratic method): a relentless probing of assumptions until the interlocutor realises they don't actually know what they thought they knew.",
     keyIdeas: [
-      "The Socratic method — questioning as a path to truth",
-      "Moral intellectualism — wrongdoing is always ignorance",
+      "The Socratic method - questioning as a path to truth",
+      "Moral intellectualism - wrongdoing is always ignorance",
       "The examined life as the only life worth living",
       "Knowledge of one's own ignorance as wisdom"
     ],
@@ -25,12 +25,12 @@ const PHILOSOPHERS = [
     tagline: "Opinion is the medium between knowledge and ignorance",
     image: "plato",
     color: "#8fa8c8",
-    summary: "Plato founded the Academy in Athens — arguably the first university. His Theory of Forms holds that the physical world is a shadow of a higher reality of perfect, eternal Forms. His political philosophy in The Republic remains one of the most influential — and most argued over — texts in Western thought.",
+    summary: "Plato founded the Academy in Athens - arguably the first university. His Theory of Forms holds that the physical world is a shadow of a higher reality of perfect, eternal Forms. His political philosophy in The Republic remains one of the most influential - and most argued over - texts in Western thought.",
     keyIdeas: [
-      "Theory of Forms — true reality is abstract and perfect",
-      "The Allegory of the Cave — perception vs. reality",
-      "Philosopher-kings — rule by the wise",
-      "The tripartite soul — reason, spirit, appetite"
+      "Theory of Forms - true reality is abstract and perfect",
+      "The Allegory of the Cave - perception vs. reality",
+      "Philosopher-kings - rule by the wise",
+      "The tripartite soul - reason, spirit, appetite"
     ],
     modernEcho: "Every time someone says 'the ideal version of X' or talks about 'what democracy really means' versus what it is in practice, they're operating in Platonic territory. Silicon Valley's obsession with 'the product vision' vs. the messy actual product is almost embarrassingly Platonic.",
     legacy: "Aristotle, Neoplatonism, Christian theology, rationalist philosophy, political theory"
@@ -43,13 +43,13 @@ const PHILOSOPHERS = [
     tagline: "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
     image: "aristotle",
     color: "#a8c89e",
-    summary: "Aristotle was Plato's most gifted student and then his greatest critic. Where Plato pointed up to abstract Forms, Aristotle pointed down at the actual world. He founded biology, logic, rhetoric, poetics and political science as systematic disciplines. His concept of eudaimonia — flourishing — is the ancestor of almost all modern positive psychology.",
+    summary: "Aristotle was Plato's most gifted student and then his greatest critic. Where Plato pointed up to abstract Forms, Aristotle pointed down at the actual world. He founded biology, logic, rhetoric, poetics and political science as systematic disciplines. His concept of eudaimonia - flourishing - is the ancestor of almost all modern positive psychology.",
     keyIdeas: [
-      "Eudaimonia — human flourishing as the highest good",
-      "Virtue ethics — character over rules or consequences",
-      "The Golden Mean — virtue as the middle path",
-      "Hylomorphism — matter and form as inseparable",
-      "The four causes — material, formal, efficient, final"
+      "Eudaimonia - human flourishing as the highest good",
+      "Virtue ethics - character over rules or consequences",
+      "The Golden Mean - virtue as the middle path",
+      "Hylomorphism - matter and form as inseparable",
+      "The four causes - material, formal, efficient, final"
     ],
     modernEcho: "Positive psychology and the 'strengths-based' movement is Aristotelian virtue ethics with a new coat of paint. The entire field of character education in schools traces back directly to the Nicomachean Ethics.",
     legacy: "Scholasticism, Islamic philosophy (Averroes, Avicenna), scientific method, virtue ethics revival"
@@ -62,15 +62,15 @@ const PHILOSOPHERS = [
     tagline: "Do not spoil what you have by desiring what you have not.",
     image: "epicurus",
     color: "#c8b89e",
-    summary: "Epicurus founded a community — 'the Garden' — in Athens where men, women and slaves lived together as equals, pursuing philosophical conversation and simple pleasures. Widely misunderstood as hedonism, his philosophy was actually about achieving ataraxia (tranquillity) and aponia (freedom from pain) through friendship, modest living and the removal of irrational fears, especially the fear of death.",
+    summary: "Epicurus founded a community - 'the Garden' - in Athens where men, women and slaves lived together as equals, pursuing philosophical conversation and simple pleasures. Widely misunderstood as hedonism, his philosophy was actually about achieving ataraxia (tranquillity) and aponia (freedom from pain) through friendship, modest living and the removal of irrational fears, especially the fear of death.",
     keyIdeas: [
-      "Ataraxia — tranquillity as the highest pleasure",
-      "Materialism about the soul — no afterlife to fear",
+      "Ataraxia - tranquillity as the highest pleasure",
+      "Materialism about the soul - no afterlife to fear",
       "Friendship as the greatest good",
       "Simple pleasures over intense but fleeting ones",
-      "The tetrapharmakos — four-fold remedy for anxiety"
+      "The tetrapharmakos - four-fold remedy for anxiety"
     ],
-    modernEcho: "The entire wellness industry — from mindfulness apps to minimalism to the slow living movement — is Epicureanism with a subscription model. Even 'digital detox' retreats are basically the Garden of Epicurus with better Wi-Fi (or none at all).",
+    modernEcho: "The entire wellness industry - from mindfulness apps to minimalism to the slow living movement - is Epicureanism with a subscription model. Even 'digital detox' retreats are basically the Garden of Epicurus with better Wi-Fi (or none at all).",
     legacy: "Lucretius, Enlightenment materialism, utilitarian pleasure calculus, modern wellness culture"
   },
   {
@@ -81,15 +81,15 @@ const PHILOSOPHERS = [
     tagline: "You have power over your mind, not outside events. Realise this, and you will find strength.",
     image: "marcus",
     color: "#b89eb8",
-    summary: "A Roman emperor who spent his reign fighting wars he found meaningless and writing Meditations — a private journal of Stoic self-discipline that he never intended to publish. The most powerful man in the world reminding himself daily that power, fame and comfort are indifferent to virtue. A deeply human document.",
+    summary: "A Roman emperor who spent his reign fighting wars he found meaningless and writing Meditations - a private journal of Stoic self-discipline that he never intended to publish. The most powerful man in the world reminding himself daily that power, fame and comfort are indifferent to virtue. A deeply human document.",
     keyIdeas: [
-      "The dichotomy of control — only our judgements are 'up to us'",
-      "Amor fati — love of fate",
-      "The view from above — cosmological perspective on personal troubles",
+      "The dichotomy of control - only our judgements are 'up to us'",
+      "Amor fati - love of fate",
+      "The view from above - cosmological perspective on personal troubles",
       "Reason as the divine spark in every person",
       "Daily practice over abstract theory"
     ],
-    modernEcho: "The modern Stoicism revival (Ryan Holiday, Tim Ferriss's 'fear-setting', countless productivity YouTubers) is almost entirely Marcus Aurelius and Epictetus re-packaged. Cognitive Behavioural Therapy's core insight — that it's not events but our judgements of events that disturb us — is lifted from Epictetus almost word for word.",
+    modernEcho: "The modern Stoicism revival (Ryan Holiday, Tim Ferriss's 'fear-setting', countless productivity YouTubers) is almost entirely Marcus Aurelius and Epictetus re-packaged. Cognitive Behavioural Therapy's core insight - that it's not events but our judgements of events that disturb us - is lifted from Epictetus almost word for word.",
     legacy: "Stoic tradition, CBT, modern self-help, Ryan Holiday's Daily Stoic empire"
   },
   {
@@ -100,15 +100,15 @@ const PHILOSOPHERS = [
     tagline: "I think, therefore I am.",
     image: "descartes",
     color: "#9eb8c8",
-    summary: "Descartes tried to rebuild knowledge from scratch by doubting everything that could possibly be doubted. He concluded that the one thing he couldn't doubt was his own doubting — his thinking self. From this he rebuilt a rationalist system. His mind-body dualism — the idea that mind and matter are fundamentally different substances — has haunted philosophy and science ever since.",
+    summary: "Descartes tried to rebuild knowledge from scratch by doubting everything that could possibly be doubted. He concluded that the one thing he couldn't doubt was his own doubting - his thinking self. From this he rebuilt a rationalist system. His mind-body dualism - the idea that mind and matter are fundamentally different substances - has haunted philosophy and science ever since.",
     keyIdeas: [
       "Methodological doubt as a philosophical tool",
-      "Cogito ergo sum — the self-certifying nature of thought",
-      "Mind-body dualism — res cogitans vs res extensa",
-      "Innate ideas — some knowledge is prior to experience",
+      "Cogito ergo sum - the self-certifying nature of thought",
+      "Mind-body dualism - res cogitans vs res extensa",
+      "Innate ideas - some knowledge is prior to experience",
       "The mechanistic view of nature"
     ],
-    modernEcho: "The 'hard problem of consciousness' — why physical processes give rise to subjective experience — is a direct descendant of Cartesian dualism. Every neuroscientist who wonders 'why does it feel like something to see red?' is arguing with Descartes.",
+    modernEcho: "The 'hard problem of consciousness' - why physical processes give rise to subjective experience - is a direct descendant of Cartesian dualism. Every neuroscientist who wonders 'why does it feel like something to see red?' is arguing with Descartes.",
     legacy: "Rationalism, mind-body problem, modern science, philosophy of mind"
   },
   {
@@ -119,13 +119,13 @@ const PHILOSOPHERS = [
     tagline: "Reason is, and ought only to be the slave of the passions.",
     image: "hume",
     color: "#c8a8a8",
-    summary: "Scotland's greatest philosopher — and possibly the most radical empiricist ever. Hume argued that all knowledge comes from sensory experience, that causation is a habit of mind not a fact of nature, that the self is not a thing but a 'bundle of perceptions', and that morality is grounded in sentiment not reason. He woke Kant from his 'dogmatic slumber'.",
+    summary: "Scotland's greatest philosopher - and possibly the most radical empiricist ever. Hume argued that all knowledge comes from sensory experience, that causation is a habit of mind not a fact of nature, that the self is not a thing but a 'bundle of perceptions', and that morality is grounded in sentiment not reason. He woke Kant from his 'dogmatic slumber'.",
     keyIdeas: [
-      "Empiricism — all knowledge from experience",
-      "The problem of induction — the future need not resemble the past",
+      "Empiricism - all knowledge from experience",
+      "The problem of induction - the future need not resemble the past",
       "Causation as constant conjunction, not necessary connection",
-      "The bundle theory of the self — no persistent 'I'",
-      "Moral sentimentalism — is-ought distinction"
+      "The bundle theory of the self - no persistent 'I'",
+      "Moral sentimentalism - is-ought distinction"
     ],
     modernEcho: "Hume's bundle theory of self looks startlingly like both Buddhist anatta (no-self) and contemporary neuroscientific accounts of consciousness as a narrative construction. The 'is-ought gap' remains the central problem in metaethics.",
     legacy: "Kant, utilitarianism, analytic philosophy, scepticism, neuroscience of self"
@@ -138,15 +138,15 @@ const PHILOSOPHERS = [
     tagline: "Act only according to that maxim by which you can at the same time will that it should become a universal law.",
     image: "kant",
     color: "#a8c8b8",
-    summary: "Kant attempted to reconcile rationalism and empiricism and ended up reshaping all of philosophy. His critical philosophy asked: what are the conditions of possibility for experience and knowledge? His ethics — deontology — holds that the moral worth of an action depends entirely on the maxim (principle) behind it, not its consequences. Persons are ends in themselves, never merely means.",
+    summary: "Kant attempted to reconcile rationalism and empiricism and ended up reshaping all of philosophy. His critical philosophy asked: what are the conditions of possibility for experience and knowledge? His ethics - deontology - holds that the moral worth of an action depends entirely on the maxim (principle) behind it, not its consequences. Persons are ends in themselves, never merely means.",
     keyIdeas: [
-      "The Copernican revolution in philosophy — the mind structures experience",
+      "The Copernican revolution in philosophy - the mind structures experience",
       "Synthetic a priori knowledge",
-      "The Categorical Imperative — universalisability",
+      "The Categorical Imperative - universalisability",
       "Persons as ends-in-themselves",
-      "Phenomena vs noumena — the limits of knowledge"
+      "Phenomena vs noumena - the limits of knowledge"
     ],
-    modernEcho: "International human rights law is built on Kantian foundations. Every time someone says 'you can't treat people as mere tools' they're channelling Kant. AI ethics discourse is almost entirely Kantian deontology vs. utilitarian consequentialism — a debate Kant helped frame.",
+    modernEcho: "International human rights law is built on Kantian foundations. Every time someone says 'you can't treat people as mere tools' they're channelling Kant. AI ethics discourse is almost entirely Kantian deontology vs. utilitarian consequentialism - a debate Kant helped frame.",
     legacy: "German Idealism, deontological ethics, human rights theory, analytic philosophy"
   },
   {
@@ -157,12 +157,12 @@ const PHILOSOPHERS = [
     tagline: "The most common form of despair is not being who you are.",
     image: "kierkegaard",
     color: "#c8c89e",
-    summary: "Copenhagen's great melancholic. Kierkegaard wrote under pseudonyms, describing the 'stages of existence': the aesthetic (living for pleasure and novelty), the ethical (living by duty) and the religious (the 'leap of faith' into an absurd relationship with God). He is often called the first existentialist, though he would have resisted any -ism. His critique of the crowd — 'the public' as a fiction that dissolves personal responsibility — reads as a prophecy of social media.",
+    summary: "Copenhagen's great melancholic. Kierkegaard wrote under pseudonyms, describing the 'stages of existence': the aesthetic (living for pleasure and novelty), the ethical (living by duty) and the religious (the 'leap of faith' into an absurd relationship with God). He is often called the first existentialist, though he would have resisted any -ism. His critique of the crowd - 'the public' as a fiction that dissolves personal responsibility - reads as a prophecy of social media.",
     keyIdeas: [
-      "Stages of existence — aesthetic, ethical, religious",
-      "The leap of faith — passionate commitment beyond evidence",
-      "Subjectivity as truth — especially in matters of existence",
-      "The crowd as untruth — individual vs. mass",
+      "Stages of existence - aesthetic, ethical, religious",
+      "The leap of faith - passionate commitment beyond evidence",
+      "Subjectivity as truth - especially in matters of existence",
+      "The crowd as untruth - individual vs. mass",
       "Despair as the sickness unto death"
     ],
     modernEcho: "Existential therapy, meaning-centred psychotherapy (Viktor Frankl), and the entire genre of 'authentic living' self-help all descend from Kierkegaard. His critique of the 'public' and 'the crowd' as forces that numb the individual is quoted endlessly in discussions of social media and algorithmic conformity.",
@@ -176,16 +176,16 @@ const PHILOSOPHERS = [
     tagline: "He who has a why to live can bear almost any how.",
     image: "nietzsche",
     color: "#c89e9e",
-    summary: "Nietzsche declared the death of God — meaning the collapse of the metaphysical and moral framework that had organised Western civilisation. In the resulting nihilistic vacuum, he argued, the Übermensch (overman) would create new values rather than inherit them. His concept of will to power, eternal recurrence, and perspectivism make him the most quoted and most misunderstood philosopher of the modern era.",
+    summary: "Nietzsche declared the death of God - meaning the collapse of the metaphysical and moral framework that had organised Western civilisation. In the resulting nihilistic vacuum, he argued, the Übermensch (overman) would create new values rather than inherit them. His concept of will to power, eternal recurrence, and perspectivism make him the most quoted and most misunderstood philosopher of the modern era.",
     keyIdeas: [
-      "The death of God — collapse of inherited values",
-      "Will to power — the basic drive in all living things",
-      "Eternal recurrence — would you live this life again?",
-      "Übermensch — self-overcoming value creation",
-      "Perspectivism — no view from nowhere",
-      "Master/slave morality — genealogy of ethics"
+      "The death of God - collapse of inherited values",
+      "Will to power - the basic drive in all living things",
+      "Eternal recurrence - would you live this life again?",
+      "Übermensch - self-overcoming value creation",
+      "Perspectivism - no view from nowhere",
+      "Master/slave morality - genealogy of ethics"
     ],
-    modernEcho: "The startup culture's 'disruptive innovation', the athlete's 'become who you are', Jordan Peterson's self-help programme — all wear Nietzschean clothing. His warning about ressentiment (reactive, envy-driven values) is increasingly relevant to online culture.",
+    modernEcho: "The startup culture's 'disruptive innovation', the athlete's 'become who you are', Jordan Peterson's self-help programme - all wear Nietzschean clothing. His warning about ressentiment (reactive, envy-driven values) is increasingly relevant to online culture.",
     legacy: "Existentialism, postmodernism, continental philosophy, cultural criticism"
   },
   {
@@ -196,16 +196,16 @@ const PHILOSOPHERS = [
     tagline: "Every man is born as many men and dies as a single one.",
     image: "heidegger",
     color: "#a89ec8",
-    summary: "Heidegger's Being and Time (1927) attempted to revive the question of Being itself — what does it mean to exist? His concept of Dasein (being-there) — human existence as always already thrown into a world, facing death, oriented by care — is one of the most influential and contested ideas of the 20th century. His later work turned to technology, language and art. His Nazi involvement remains a deep moral problem for his reception.",
+    summary: "Heidegger's Being and Time (1927) attempted to revive the question of Being itself - what does it mean to exist? His concept of Dasein (being-there) - human existence as always already thrown into a world, facing death, oriented by care - is one of the most influential and contested ideas of the 20th century. His later work turned to technology, language and art. His Nazi involvement remains a deep moral problem for his reception.",
     keyIdeas: [
-      "Being-in-the-world — existence before essence",
-      "Dasein — human being as care-structure",
-      "Thrownness and projection — facticity and possibility",
+      "Being-in-the-world - existence before essence",
+      "Dasein - human being as care-structure",
+      "Thrownness and projection - facticity and possibility",
       "Being-toward-death as authenticity condition",
-      "The question of technology — enframing the world",
+      "The question of technology - enframing the world",
       "Language as the house of Being"
     ],
-    modernEcho: "Phenomenological user experience design, 'embedded cognition' in cognitive science, and ecological philosophy all draw on Heidegger. His critique of technology — that it turns everything, including humans, into 'standing reserve' — is the most sophisticated framework available for analysing platform capitalism.",
+    modernEcho: "Phenomenological user experience design, 'embedded cognition' in cognitive science, and ecological philosophy all draw on Heidegger. His critique of technology - that it turns everything, including humans, into 'standing reserve' - is the most sophisticated framework available for analysing platform capitalism.",
     legacy: "Existentialism, phenomenology, hermeneutics, deconstruction, cognitive science"
   },
   {
@@ -216,12 +216,12 @@ const PHILOSOPHERS = [
     tagline: "One is not born, but rather becomes, a woman.",
     image: "beauvoir",
     color: "#c8a8c8",
-    summary: "De Beauvoir applied existentialist philosophy — particularly Sartre's — to the situation of women, producing The Second Sex (1949), one of the founding texts of modern feminism. Her analysis of 'the Other' — how women are constructed as Other in relation to a male default — shaped gender theory for decades. She also wrote deeply on ageing, ethics and the phenomenology of lived experience.",
+    summary: "De Beauvoir applied existentialist philosophy - particularly Sartre's - to the situation of women, producing The Second Sex (1949), one of the founding texts of modern feminism. Her analysis of 'the Other' - how women are constructed as Other in relation to a male default - shaped gender theory for decades. She also wrote deeply on ageing, ethics and the phenomenology of lived experience.",
     keyIdeas: [
-      "Woman as Other — constructed, not natural",
-      "Situated freedom — freedom always within a situation",
-      "The ethics of ambiguity — living with irreducible tension",
-      "Transcendence vs. immanence — freedom vs. facticity",
+      "Woman as Other - constructed, not natural",
+      "Situated freedom - freedom always within a situation",
+      "The ethics of ambiguity - living with irreducible tension",
+      "Transcendence vs. immanence - freedom vs. facticity",
       "Phenomenology of lived body"
     ],
     modernEcho: "Contemporary gender theory, intersectionality debates, and the philosophy of embodiment all build on de Beauvoir. Her insistence that social position shapes consciousness remains one of the most productive ideas in contemporary social philosophy.",
@@ -235,7 +235,7 @@ const MODERN_VOICES = [
     years: "b. 1946",
     origin: "Australian",
     tagline: "Effective altruism's philosophical engine",
-    description: "Singer's utilitarian argument that affluent people are morally obligated to give to the global poor until it 'hurts' launched the effective altruism movement. His work on animal liberation (1975) changed the terms of the debate about our obligations to non-human life. Deeply controversial — and unavoidably influential.",
+    description: "Singer's utilitarian argument that affluent people are morally obligated to give to the global poor until it 'hurts' launched the effective altruism movement. His work on animal liberation (1975) changed the terms of the debate about our obligations to non-human life. Deeply controversial - and unavoidably influential.",
     echo: "Bentham & Mill's utilitarianism, universalised"
   },
   {
@@ -259,7 +259,7 @@ const MODERN_VOICES = [
     years: "b. 1959",
     origin: "Korean-German",
     tagline: "Burnout society and the transparency imperative",
-    description: "Han's short, dense books diagnose contemporary pathologies: the burnout society, the transparency society, the palliative society. Drawing on Heidegger and Benjamin, he argues that neoliberal achievement culture produces a psycho-political violence more insidious than external domination — we exploit ourselves.",
+    description: "Han's short, dense books diagnose contemporary pathologies: the burnout society, the transparency society, the palliative society. Drawing on Heidegger and Benjamin, he argues that neoliberal achievement culture produces a psycho-political violence more insidious than external domination - we exploit ourselves.",
     echo: "Heidegger on technology, Nietzsche's self-overcoming gone wrong"
   },
   {
@@ -267,7 +267,7 @@ const MODERN_VOICES = [
     years: "b. 1944",
     origin: "American",
     tagline: "Abolition, freedom and intersecting oppressions",
-    description: "Davis's philosophy of prison abolition is grounded in a Marxist and feminist analysis of how race, gender and class intersect in systems of confinement. Her concept of freedom is not merely negative (freedom from) but positive — a collective, embodied practice of building different social structures.",
+    description: "Davis's philosophy of prison abolition is grounded in a Marxist and feminist analysis of how race, gender and class intersect in systems of confinement. Her concept of freedom is not merely negative (freedom from) but positive - a collective, embodied practice of building different social structures.",
     echo: "Marx, feminist philosophy, Du Bois's double consciousness"
   },
   {
@@ -275,7 +275,7 @@ const MODERN_VOICES = [
     years: "b. 1973",
     origin: "Swedish",
     tagline: "Existential risk and the long-term future",
-    description: "Bostrom's work on superintelligence and existential risk has moved from academic curiosity to policy-shaping force. His simulation argument — the claim that we are probably living in a computer simulation — is Plato's Cave for the digital age. Whether he is a philosopher or a technologist-with-philosophy credentials is itself an interesting question.",
+    description: "Bostrom's work on superintelligence and existential risk has moved from academic curiosity to policy-shaping force. His simulation argument - the claim that we are probably living in a computer simulation - is Plato's Cave for the digital age. Whether he is a philosopher or a technologist-with-philosophy credentials is itself an interesting question.",
     echo: "Plato's Cave, utilitarian long-termism, Pascalian risk calculus"
   }
 ];
@@ -288,16 +288,16 @@ const DANISH_VOICES = [
     city: "Copenhagen",
     description: "The unavoidable starting point for any Danish philosophy list. Kierkegaard invented existentialism before it had a name, writing in Danish (a choice that limited his readership deliberately) about the terror and beauty of individual existence. His journals alone would make him one of the most remarkable minds of the 19th century.",
     works: ["Either/Or", "Fear and Trembling", "The Sickness Unto Death", "Concluding Unscientific Postscript"],
-    echo: "Individual vs. crowd — an anxiety very much alive today"
+    echo: "Individual vs. crowd - an anxiety very much alive today"
   },
   {
     name: "Knud Ejler Løgstrup",
     years: "1905–1981",
     type: "20th Century",
     city: "Aarhus",
-    description: "Løgstrup's The Ethical Demand (Den etiske fordring, 1956) is one of the most significant works of Scandinavian philosophy. He argued that we are always already holding something of another person's life in our hands — and this creates an unspoken, radical ethical demand that cannot be systematised or calculated. Deeply Lutheran in flavour but philosophically original.",
+    description: "Løgstrup's The Ethical Demand (Den etiske fordring, 1956) is one of the most significant works of Scandinavian philosophy. He argued that we are always already holding something of another person's life in our hands - and this creates an unspoken, radical ethical demand that cannot be systematised or calculated. Deeply Lutheran in flavour but philosophically original.",
     works: ["The Ethical Demand", "Metaphysics", "System and Symbol"],
-    echo: "Responsibility as pre-theoretical — ethics before ethics"
+    echo: "Responsibility as pre-theoretical - ethics before ethics"
   },
   {
     name: "Peter Kemp",
@@ -313,7 +313,7 @@ const DANISH_VOICES = [
     years: "b. 1975",
     type: "Contemporary",
     city: "Aalborg",
-    description: "Brinkmann is a psychologist-philosopher who has become one of Denmark's most widely read public intellectuals. His book Stå Fast (Stand Firm, 2014) — a deliberate provocation against the self-help and positive psychology industries — was a bestseller across Scandinavia. He argues for the Stoic-adjacent virtues of resistance, duty and the limits of self-improvement as the real path to a good life.",
+    description: "Brinkmann is a psychologist-philosopher who has become one of Denmark's most widely read public intellectuals. His book Stå Fast (Stand Firm, 2014) - a deliberate provocation against the self-help and positive psychology industries - was a bestseller across Scandinavia. He argues for the Stoic-adjacent virtues of resistance, duty and the limits of self-improvement as the real path to a good life.",
     works: ["Stand Firm", "Ståsteder", "Psychology as a Moral Science"],
     echo: "Kierkegaard's critique of the crowd + Aristotelian virtue ethics"
   },
@@ -331,7 +331,7 @@ const DANISH_VOICES = [
     years: "b. 1952",
     type: "Author-Philosopher",
     city: "Copenhagen",
-    description: "Primarily known as a novelist (Vi, de druknede / We, the Drowned), Jensen is also a fierce public intellectual and essayist. His reportage from conflict zones and his essays on Western complicity in global suffering carry a moral urgency that is philosophical in the deepest sense — even when it refuses academic categories. He embodies the Danish tradition of the writer as moral witness.",
+    description: "Primarily known as a novelist (Vi, de druknede / We, the Drowned), Jensen is also a fierce public intellectual and essayist. His reportage from conflict zones and his essays on Western complicity in global suffering carry a moral urgency that is philosophical in the deepest sense - even when it refuses academic categories. He embodies the Danish tradition of the writer as moral witness.",
     works: ["Vi, de druknede", "Jeg har set verden begynde", "Den fremmede"],
     echo: "Camus's engaged absurdist, Kierkegaard's individual conscience"
   },
@@ -342,16 +342,16 @@ const DANISH_VOICES = [
     city: "Copenhagen",
     description: "Frank is a neuroscientist and author who writes at the border of science and philosophy of mind. Her book The Neuroscientist's Nephew is an investigation of her own family's mental illness that doubles as a meditation on free will, determinism and what neuroscience does to our self-understanding. She represents a growing tradition of scientists doing philosophy by other means.",
     works: ["The Neuroscientist's Nephew", "My Beautiful Genome", "Mindfield"],
-    echo: "Hume's bundle theory of self, Spinoza's determinism — now with brain scans"
+    echo: "Hume's bundle theory of self, Spinoza's determinism - now with brain scans"
   },
   {
     name: "Lars Svendsen",
     years: "b. 1970",
     type: "Contemporary (Norwegian-Danish context)",
     city: "Bergen / Nordic",
-    description: "Though Norwegian, Svendsen writes in a tradition deeply connected to the Kierkegaardian Nordic sensibility. His books on boredom, evil, loneliness and fashion are philosophical essays of the highest order — rigorous without being academic, readable without being shallow. In Scandinavia he is read as naturally on both sides of the Øresund.",
+    description: "Though Norwegian, Svendsen writes in a tradition deeply connected to the Kierkegaardian Nordic sensibility. His books on boredom, evil, loneliness and fashion are philosophical essays of the highest order - rigorous without being academic, readable without being shallow. In Scandinavia he is read as naturally on both sides of the Øresund.",
     works: ["A Philosophy of Boredom", "A Philosophy of Evil", "A Philosophy of Loneliness"],
-    echo: "Kierkegaard on despair, Heidegger on anxiety — made legible"
+    echo: "Kierkegaard on despair, Heidegger on anxiety - made legible"
   }
 ];
 
@@ -360,12 +360,12 @@ const ECHOES = [
     id: "mindfulness",
     label: "Mindfulness",
     color: "#8fa8c8",
-    description: "The billion-dollar mindfulness industry — apps, retreats, corporate wellness — is almost entirely Stoic and Epicurean philosophy with Buddhist vocabulary added.",
+    description: "The billion-dollar mindfulness industry - apps, retreats, corporate wellness - is almost entirely Stoic and Epicurean philosophy with Buddhist vocabulary added.",
     chain: [
       { era: "Ancient Greece", figure: "Epicurus", text: "Ataraxia: a calm, undisturbed mind through simple living, friendship and absence of fear. Achieved by practice, not theory." },
       { era: "Ancient Rome", figure: "Marcus Aurelius", text: "Daily Meditations as a practice of returning to the present moment and accepting what cannot be changed." },
       { era: "Parallel: Buddhism", figure: "Buddhist tradition", text: "Sati (mindfulness) as sustained present-moment awareness, developed through the same centuries." },
-      { era: "19th Century", figure: "Schopenhauer", text: "Western discovery of Buddhism — the will as suffering, contemplation as temporary liberation." },
+      { era: "19th Century", figure: "Schopenhauer", text: "Western discovery of Buddhism - the will as suffering, contemplation as temporary liberation." },
       { era: "20th Century", figure: "Jon Kabat-Zinn", text: "MBSR (1979): Buddhist meditation techniques stripped of religious context, repackaged for medical and corporate use." },
       { era: "Now", figure: "Headspace / Calm / etc.", text: "Subscription apps delivering ancient Stoic-Buddhist wisdom in 10-minute daily doses." }
     ]
@@ -374,12 +374,12 @@ const ECHOES = [
     id: "authenticity",
     label: "Authentic Self",
     color: "#c8a97e",
-    description: "The obsession with being 'authentic', 'your true self' or 'genuine' is a philosophical tradition stretching from Socrates to existentialism — but modern culture has flattened it into personal branding.",
+    description: "The obsession with being 'authentic', 'your true self' or 'genuine' is a philosophical tradition stretching from Socrates to existentialism - but modern culture has flattened it into personal branding.",
     chain: [
-      { era: "Ancient Greece", figure: "Socrates", text: "'Know thyself' — the Delphic maxim that Socrates turned into a life's project. The unexamined life is not worth living." },
+      { era: "Ancient Greece", figure: "Socrates", text: "'Know thyself' - the Delphic maxim that Socrates turned into a life's project. The unexamined life is not worth living." },
       { era: "Early Modern", figure: "Rousseau", text: "Authenticity as against social corruption: the natural self is good, civilisation deforms it." },
-      { era: "19th Century", figure: "Kierkegaard", text: "The authentic life as a passionate, individual commitment — as opposed to the conformist 'crowd'." },
-      { era: "20th Century", figure: "Heidegger / Sartre", text: "Authenticity as owning your thrownness and choosing yourself — against bad faith and das Man (the 'they')." },
+      { era: "19th Century", figure: "Kierkegaard", text: "The authentic life as a passionate, individual commitment - as opposed to the conformist 'crowd'." },
+      { era: "20th Century", figure: "Heidegger / Sartre", text: "Authenticity as owning your thrownness and choosing yourself - against bad faith and das Man (the 'they')." },
       { era: "Late 20th Century", figure: "Charles Taylor", text: "The Malaise of Modernity: authenticity as a moral ideal that has been trivialised into self-indulgence." },
       { era: "Now", figure: "LinkedIn / Instagram / TikTok", text: "'Be authentic' as a personal brand strategy. The radical existential demand has become a content guideline." }
     ]
@@ -388,41 +388,41 @@ const ECHOES = [
     id: "stoicism",
     label: "Neo-Stoicism",
     color: "#a8c89e",
-    description: "From Epictetus to Ryan Holiday — Stoicism keeps returning because its core insight (control what you can, accept what you can't) is perennially useful and perennially ignored.",
+    description: "From Epictetus to Ryan Holiday - Stoicism keeps returning because its core insight (control what you can, accept what you can't) is perennially useful and perennially ignored.",
     chain: [
       { era: "Ancient Greece", figure: "Zeno of Citium", text: "Founded the Stoa (~300 BCE): virtue as the only good, external things as 'indifferent'." },
-      { era: "Ancient Rome", figure: "Epictetus, Marcus Aurelius, Seneca", text: "Stoicism becomes a practical daily discipline for Roman life — from slave (Epictetus) to emperor (Marcus)." },
+      { era: "Ancient Rome", figure: "Epictetus, Marcus Aurelius, Seneca", text: "Stoicism becomes a practical daily discipline for Roman life - from slave (Epictetus) to emperor (Marcus)." },
       { era: "Early Modern", figure: "Neostoicism (Lipsius, Montaigne)", text: "Rediscovery of Stoic texts; Christian adaptation of Stoic virtue." },
-      { era: "20th Century", figure: "Albert Ellis / Aaron Beck", text: "CBT's core insight — it's not events but our judgements of events — is Epictetus almost verbatim." },
-      { era: "Now", figure: "Ryan Holiday, Tim Ferriss", text: "The Daily Stoic, The Obstacle Is the Way — Stoicism as productivity and resilience framework. Millions of readers." }
+      { era: "20th Century", figure: "Albert Ellis / Aaron Beck", text: "CBT's core insight - it's not events but our judgements of events - is Epictetus almost verbatim." },
+      { era: "Now", figure: "Ryan Holiday, Tim Ferriss", text: "The Daily Stoic, The Obstacle Is the Way - Stoicism as productivity and resilience framework. Millions of readers." }
     ]
   },
   {
     id: "nihilism",
     label: "Nihilism & Meaning",
     color: "#c89e9e",
-    description: "The anxiety that life has no inherent meaning is not new — Nietzsche diagnosed the crisis and proposed a creative response. We are still living inside that diagnosis.",
+    description: "The anxiety that life has no inherent meaning is not new - Nietzsche diagnosed the crisis and proposed a creative response. We are still living inside that diagnosis.",
     chain: [
       { era: "Ancient", figure: "Pyrrho / Sceptics", text: "Suspension of judgement about everything: no value claim is more justified than its negation." },
-      { era: "19th Century", figure: "Nietzsche", text: "The death of God — not atheism as such, but the collapse of the metaphysical structure that gave life meaning." },
-      { era: "19th Century", figure: "Dostoevsky", text: "If God does not exist, everything is permitted — nihilism as a psychological and moral crisis, dramatised in fiction." },
+      { era: "19th Century", figure: "Nietzsche", text: "The death of God - not atheism as such, but the collapse of the metaphysical structure that gave life meaning." },
+      { era: "19th Century", figure: "Dostoevsky", text: "If God does not exist, everything is permitted - nihilism as a psychological and moral crisis, dramatised in fiction." },
       { era: "20th Century", figure: "Camus", text: "The absurd: life has no meaning but we must rebel against meaninglessness with defiant joy. 'One must imagine Sisyphus happy.'" },
-      { era: "20th Century", figure: "Viktor Frankl", text: "Logotherapy: meaning can be found even in the worst conditions — the will to meaning as the primary human drive." },
-      { era: "Now", figure: "The meaning crisis discourse", text: "Jordan Peterson, John Vervaeke, 'post-postmodern' culture — the search for meaning after deconstruction. Nietzsche's problem, still unsolved." }
+      { era: "20th Century", figure: "Viktor Frankl", text: "Logotherapy: meaning can be found even in the worst conditions - the will to meaning as the primary human drive." },
+      { era: "Now", figure: "The meaning crisis discourse", text: "Jordan Peterson, John Vervaeke, 'post-postmodern' culture - the search for meaning after deconstruction. Nietzsche's problem, still unsolved." }
     ]
   },
   {
     id: "justice",
     label: "Social Justice",
     color: "#b89eb8",
-    description: "What does a just society look like? From Plato's Republic to Rawls to intersectionality — the question hasn't changed, only the proposed answers.",
+    description: "What does a just society look like? From Plato's Republic to Rawls to intersectionality - the question hasn't changed, only the proposed answers.",
     chain: [
       { era: "Ancient Greece", figure: "Plato / Aristotle", text: "Justice as each part playing its proper role (Plato) vs. justice as proportional equality based on merit (Aristotle)." },
       { era: "Early Modern", figure: "Hobbes / Locke / Rousseau", text: "Social contract theories: justice as agreement among rational individuals to exit the state of nature." },
-      { era: "19th Century", figure: "Marx", text: "Justice is not possible within capitalist relations — the structure itself is the injustice." },
-      { era: "20th Century", figure: "John Rawls", text: "A Theory of Justice (1971): justice as fairness — the 'veil of ignorance' thought experiment. The most influential political philosophy of the century." },
+      { era: "19th Century", figure: "Marx", text: "Justice is not possible within capitalist relations - the structure itself is the injustice." },
+      { era: "20th Century", figure: "John Rawls", text: "A Theory of Justice (1971): justice as fairness - the 'veil of ignorance' thought experiment. The most influential political philosophy of the century." },
       { era: "Late 20th Century", figure: "Kimberlé Crenshaw / bell hooks", text: "Intersectionality: justice requires attending to how race, gender and class overlap and compound." },
-      { era: "Now", figure: "Ongoing debates", text: "Effective altruism (global impartial justice) vs. communitarian traditions vs. decolonial theory — all variants of a 2,500-year-old question." }
+      { era: "Now", figure: "Ongoing debates", text: "Effective altruism (global impartial justice) vs. communitarian traditions vs. decolonial theory - all variants of a 2,500-year-old question." }
     ]
   }
 ];
