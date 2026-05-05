@@ -163,8 +163,8 @@ function buildAIThinkers() {
           <h4>${t.name}</h4>
           <span class="ai-thinker-meta">${t.origin} · ${t.years}</span>
         </div>
-        <span class="echo-badge">${t.echo}</span>
       </div>
+      <div class="ai-thinker-echo"><span class="echo-badge">${t.echo}</span></div>
       <p class="ai-thinker-tagline" style="color:${t.color}">${t.tagline}</p>
       <p>${t.description}</p>
     `;
@@ -338,6 +338,80 @@ function buildFavourites() {
   });
 }
 
+/* ── Agent Store ── */
+const RAW_BASE = "https://raw.githubusercontent.com/asworbix/reinvent/main/agents/";
+
+function buildAgentGrid() {
+  const grid = document.getElementById("agentGrid");
+
+  AGENT_STORE.forEach(agent => {
+    const card = document.createElement("div");
+    card.className = "agent-card";
+    card.style.setProperty("--agent-color", agent.color);
+    card.innerHTML = `
+      <div class="agent-card-top">
+        <div class="agent-avatar" style="background:${agent.color}18;border-color:${agent.color}55;color:${agent.color}">
+          ${agent.name.split(" ").map(w => w[0]).join("").slice(0, 2)}
+        </div>
+        <div>
+          <h3>${agent.name}</h3>
+          <span class="agent-years">${agent.years}</span>
+        </div>
+      </div>
+      <p class="agent-tagline" style="color:${agent.color}">${agent.tagline}</p>
+      <p class="agent-strength">${agent.strength}</p>
+      <blockquote class="agent-sample">"${agent.sample}"</blockquote>
+      <button class="agent-btn" data-file="${agent.file}" data-name="${agent.name}" data-years="${agent.years}" data-color="${agent.color}">
+        View &amp; copy prompt
+      </button>
+    `;
+    grid.appendChild(card);
+  });
+
+  grid.addEventListener("click", e => {
+    const btn = e.target.closest(".agent-btn");
+    if (!btn) return;
+    openPromptModal(btn.dataset.file, btn.dataset.name, btn.dataset.years, btn.dataset.color);
+  });
+}
+
+function openPromptModal(file, name, years, color) {
+  const overlay = document.getElementById("promptOverlay");
+  const header = document.getElementById("promptModalHeader");
+  const content = document.getElementById("promptContent");
+  const nameEl = document.getElementById("promptModalName");
+  const yearsEl = document.getElementById("promptModalYears");
+
+  nameEl.textContent = name;
+  yearsEl.textContent = years;
+  header.style.borderColor = color;
+  content.textContent = "Loading…";
+  overlay.classList.add("active");
+
+  fetch(RAW_BASE + file)
+    .then(r => r.text())
+    .then(text => { content.textContent = text; })
+    .catch(() => { content.textContent = "Could not load prompt. Find it in the agents/ folder of the repository."; });
+}
+
+document.getElementById("promptClose").addEventListener("click", () => {
+  document.getElementById("promptOverlay").classList.remove("active");
+});
+
+document.getElementById("promptOverlay").addEventListener("click", e => {
+  if (e.target === document.getElementById("promptOverlay"))
+    document.getElementById("promptOverlay").classList.remove("active");
+});
+
+document.getElementById("promptCopyBtn").addEventListener("click", () => {
+  const text = document.getElementById("promptContent").textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById("promptCopyBtn");
+    btn.textContent = "Copied!";
+    setTimeout(() => { btn.textContent = "Copy prompt"; }, 2000);
+  });
+});
+
 /* ── Scroll animations ── */
 function initScrollAnimations() {
   const observer = new IntersectionObserver(entries => {
@@ -347,7 +421,7 @@ function initScrollAnimations() {
   }, { threshold: 0.08 });
 
   document.querySelectorAll(
-    ".era, .phil-card, .modern-card, .danish-item, .ai-question, .ai-thinker, .fav-card, .thread-node, .echo-item, .impact-card, .tradeoff-card"
+    ".era, .phil-card, .modern-card, .danish-item, .ai-question, .ai-thinker, .fav-card, .thread-node, .echo-item, .impact-card, .tradeoff-card, .agent-card"
   ).forEach(el => observer.observe(el));
 }
 
@@ -363,6 +437,7 @@ function initNav() {
 }
 
 /* ── Boot ── */
+buildAgentGrid();
 buildEchoes();
 buildAIImpacts();
 buildAITradeoffs();

@@ -29,6 +29,7 @@
         <a href="#philosophers">Philosophers</a>
         <a href="#danish">Danish Now</a>
         <a href="#favourites">Andreas' Favourites</a>
+        <a href="#agents">Agent Store</a>
       </nav>
     </div>
     <div class="hero-scroll-hint">scroll</div>
@@ -272,6 +273,35 @@
       <div class="modern-grid" id="modernGrid"></div>
     </div>
   </section>
+
+  <!-- Agent Store -->
+  <section id="agents" class="section-ai">
+    <div class="container">
+      <span class="section-eyebrow">Claude system prompts</span>
+      <h2 class="section-title">The Agent Store</h2>
+      <p class="section-sub">
+        Each philosopher as a Claude agent. Copy any prompt, paste it as a system prompt in Claude, and have a conversation grounded in their actual thought — not a caricature.
+      </p>
+      <div class="agent-grid" id="agentGrid"></div>
+    </div>
+  </section>
+
+  <!-- Prompt modal -->
+  <div class="prompt-overlay" id="promptOverlay">
+    <div class="prompt-modal" id="promptModal">
+      <div class="prompt-modal-header" id="promptModalHeader">
+        <div>
+          <h3 id="promptModalName"></h3>
+          <span id="promptModalYears" class="phil-years"></span>
+        </div>
+        <div class="prompt-modal-actions">
+          <button class="prompt-copy-btn" id="promptCopyBtn">Copy prompt</button>
+          <button class="prompt-close-btn" id="promptClose">✕</button>
+        </div>
+      </div>
+      <pre class="prompt-content" id="promptContent"></pre>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">

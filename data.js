@@ -355,6 +355,99 @@ const DANISH_VOICES = [
   }
 ];
 
+const AGENT_STORE = [
+  {
+    id: "socrates",
+    name: "Socrates",
+    years: "470-399 BCE",
+    color: "#c8a97e",
+    tagline: "Relentless questioner. Never answers directly.",
+    strength: "Use when you need your assumptions stripped bare. He will expose contradictions you did not know you had.",
+    sample: "You have raised a most interesting question. But before we proceed — what exactly do you mean by that term?",
+    file: "socrates.md"
+  },
+  {
+    id: "plato",
+    name: "Plato",
+    years: "428-348 BCE",
+    color: "#8fa8c8",
+    tagline: "Speaks in myth and analogy. Points toward what cannot be stated.",
+    strength: "Use when you want to think about ideals vs. reality, appearance vs. truth, or the purpose of knowledge.",
+    sample: "Let us consider an image. Suppose there were men who had lived all their lives chained in a cave...",
+    file: "plato.md"
+  },
+  {
+    id: "aristotle",
+    name: "Aristotle",
+    years: "384-322 BCE",
+    color: "#a8c89e",
+    tagline: "Defines every term. Grounds everything in the actual world.",
+    strength: "Use when you need rigorous thinking about ethics, purpose, habit, or what it means to flourish.",
+    sample: "We must begin by making a distinction. When you say that, do you mean sense A or sense B? The answer differs considerably.",
+    file: "aristotle.md"
+  },
+  {
+    id: "marcus-aurelius",
+    name: "Marcus Aurelius",
+    years: "121-180 CE",
+    color: "#b89eb8",
+    tagline: "Writing to himself. Urgent, compressed, self-correcting.",
+    strength: "Use when you are overwhelmed, stuck, or need to separate what you can control from what you cannot.",
+    sample: "Remind yourself: you do not control what happens. You control only how you judge it and what you choose to do next.",
+    file: "marcus-aurelius.md"
+  },
+  {
+    id: "hume",
+    name: "David Hume",
+    years: "1711-1776",
+    color: "#c8a8a8",
+    tagline: "Radical sceptic with exceptional good humour.",
+    strength: "Use when you want to test whether a belief is actually justified, or trace where an idea really comes from.",
+    sample: "I confess the question strikes me as requiring a prior question — from what impression does this idea actually derive?",
+    file: "hume.md"
+  },
+  {
+    id: "kant",
+    name: "Immanuel Kant",
+    years: "1724-1804",
+    color: "#a8c8b8",
+    tagline: "Systematic, precise. The categorical imperative applied to everything.",
+    strength: "Use for ethical dilemmas, especially around dignity, duty, and whether an action could be universalised.",
+    sample: "Before we proceed, we should be precise about the distinction between these two terms, because the answer depends entirely on which we mean.",
+    file: "kant.md"
+  },
+  {
+    id: "kierkegaard",
+    name: "Søren Kierkegaard",
+    years: "1813-1855",
+    color: "#c8c89e",
+    tagline: "Indirect, psychologically deep, allergic to straight answers.",
+    strength: "Use when you feel hollow, inauthentic, or like you are living someone else's life. He will not make it comfortable.",
+    sample: "I find myself wondering whether you are asking this as a thinker or as an existing human being — the answer is quite different in each case.",
+    file: "kierkegaard.md"
+  },
+  {
+    id: "nietzsche",
+    name: "Friedrich Nietzsche",
+    years: "1844-1900",
+    color: "#c89e9e",
+    tagline: "Aphoristic force. Distinguishes his real positions from every distortion.",
+    strength: "Use when you want to examine where your values actually come from, and whether they are genuinely yours.",
+    sample: "Let us be honest with ourselves for a moment — which is always the most dangerous beginning.",
+    file: "nietzsche.md"
+  },
+  {
+    id: "rick-rubin",
+    name: "Rick Rubin",
+    years: "b. 1963",
+    color: "#c8b89e",
+    tagline: "Listens more than speaks. Grounds everything in the work.",
+    strength: "Use when you are creatively stuck, optimising for the wrong thing, or have lost contact with why you started.",
+    sample: "What would this look like if you stopped thinking about how it would land, and just made what seemed most true?",
+    file: "rick-rubin.md"
+  }
+];
+
 const FAVOURITES = [
   {
     name: "Aristotle",
