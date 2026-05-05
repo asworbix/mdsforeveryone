@@ -137,7 +137,7 @@ function renderPanel(agent) {
     }
   });
   document.getElementById("btnOpen").title =
-    "Prompt copied — paste into Project instructions on claude.ai";
+    "Prompt copied — paste it as your first message in Claude";
 
   if (promptCache[agent.file]) {
     document.getElementById("promptContent").textContent = promptCache[agent.file];
