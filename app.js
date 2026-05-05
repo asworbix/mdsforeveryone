@@ -338,79 +338,95 @@ function buildFavourites() {
   });
 }
 
-/* ── Agent Store ── */
+/* ── Agent Store (tabbed) ── */
 const RAW_BASE = "https://raw.githubusercontent.com/asworbix/reinvent/main/agents/";
+const promptCache = {};
 
-function buildAgentGrid() {
-  const grid = document.getElementById("agentGrid");
+function buildAgentTabs() {
+  const tabList = document.getElementById("agentTabList");
+  const panel = document.getElementById("agentTabPanel");
 
-  AGENT_STORE.forEach(agent => {
-    const card = document.createElement("div");
-    card.className = "agent-card";
-    card.style.setProperty("--agent-color", agent.color);
-    card.innerHTML = `
-      <div class="agent-card-top">
-        <div class="agent-avatar" style="background:${agent.color}18;border-color:${agent.color}55;color:${agent.color}">
+  AGENT_STORE.forEach((agent, i) => {
+    const tab = document.createElement("button");
+    tab.className = "agent-tab";
+    tab.dataset.index = i;
+    tab.style.setProperty("--agent-color", agent.color);
+    tab.innerHTML = `
+      <div class="agent-tab-avatar" style="background:${agent.color}18;border-color:${agent.color}44;color:${agent.color}">
+        ${agent.name.split(" ").map(w => w[0]).join("").slice(0, 2)}
+      </div>
+      <div class="agent-tab-info">
+        <span class="agent-tab-name">${agent.name}</span>
+        <span class="agent-tab-years">${agent.years}</span>
+      </div>
+    `;
+    tab.addEventListener("click", () => selectAgent(i));
+    tabList.appendChild(tab);
+  });
+
+  selectAgent(0);
+}
+
+function selectAgent(index) {
+  const agent = AGENT_STORE[index];
+  const panel = document.getElementById("agentTabPanel");
+
+  document.querySelectorAll(".agent-tab").forEach((t, i) => {
+    t.classList.toggle("active", i === index);
+  });
+
+  panel.innerHTML = `
+    <div class="agent-panel-header" style="border-top-color:${agent.color}">
+      <div class="agent-panel-id">
+        <div class="agent-panel-avatar" style="background:${agent.color}18;border-color:${agent.color};color:${agent.color}">
           ${agent.name.split(" ").map(w => w[0]).join("").slice(0, 2)}
         </div>
         <div>
-          <h3>${agent.name}</h3>
-          <span class="agent-years">${agent.years}</span>
+          <h3 class="agent-panel-name">${agent.name}</h3>
+          <span class="agent-panel-years">${agent.years}</span>
         </div>
       </div>
-      <p class="agent-tagline" style="color:${agent.color}">${agent.tagline}</p>
-      <p class="agent-strength">${agent.strength}</p>
-      <blockquote class="agent-sample">"${agent.sample}"</blockquote>
-      <button class="agent-btn" data-file="${agent.file}" data-name="${agent.name}" data-years="${agent.years}" data-color="${agent.color}">
-        View &amp; copy prompt
-      </button>
-    `;
-    grid.appendChild(card);
+    </div>
+    <div class="agent-panel-body">
+      <p class="agent-panel-tagline" style="color:${agent.color}">${agent.tagline}</p>
+      <p class="agent-panel-strength">${agent.strength}</p>
+      <blockquote class="agent-panel-sample">"${agent.sample}"</blockquote>
+      <div class="agent-panel-prompt">
+        <div class="agent-panel-prompt-header">
+          <span class="agent-panel-prompt-label">System prompt</span>
+          <button class="agent-copy-btn" id="agentCopyBtn" style="--agent-color:${agent.color}">Copy prompt</button>
+        </div>
+        <pre class="agent-panel-prompt-content" id="agentPromptContent">Loading…</pre>
+      </div>
+    </div>
+  `;
+
+  document.getElementById("agentCopyBtn").addEventListener("click", () => {
+    const text = document.getElementById("agentPromptContent").textContent;
+    if (text === "Loading…" || text.startsWith("Could not")) return;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById("agentCopyBtn");
+      btn.textContent = "Copied!";
+      setTimeout(() => { btn.textContent = "Copy prompt"; }, 2000);
+    });
   });
 
-  grid.addEventListener("click", e => {
-    const btn = e.target.closest(".agent-btn");
-    if (!btn) return;
-    openPromptModal(btn.dataset.file, btn.dataset.name, btn.dataset.years, btn.dataset.color);
-  });
+  if (promptCache[agent.file]) {
+    document.getElementById("agentPromptContent").textContent = promptCache[agent.file];
+  } else {
+    fetch(RAW_BASE + agent.file)
+      .then(r => r.text())
+      .then(text => {
+        promptCache[agent.file] = text;
+        const el = document.getElementById("agentPromptContent");
+        if (el) el.textContent = text;
+      })
+      .catch(() => {
+        const el = document.getElementById("agentPromptContent");
+        if (el) el.textContent = "Could not load. Find it in the agents/ folder of the repository.";
+      });
+  }
 }
-
-function openPromptModal(file, name, years, color) {
-  const overlay = document.getElementById("promptOverlay");
-  const header = document.getElementById("promptModalHeader");
-  const content = document.getElementById("promptContent");
-  const nameEl = document.getElementById("promptModalName");
-  const yearsEl = document.getElementById("promptModalYears");
-
-  nameEl.textContent = name;
-  yearsEl.textContent = years;
-  header.style.borderColor = color;
-  content.textContent = "Loading…";
-  overlay.classList.add("active");
-
-  fetch(RAW_BASE + file)
-    .then(r => r.text())
-    .then(text => { content.textContent = text; })
-    .catch(() => { content.textContent = "Could not load prompt. Find it in the agents/ folder of the repository."; });
-}
-
-document.getElementById("promptClose").addEventListener("click", () => {
-  document.getElementById("promptOverlay").classList.remove("active");
-});
-
-document.getElementById("promptOverlay").addEventListener("click", e => {
-  if (e.target === document.getElementById("promptOverlay"))
-    document.getElementById("promptOverlay").classList.remove("active");
-});
-
-document.getElementById("promptCopyBtn").addEventListener("click", () => {
-  const text = document.getElementById("promptContent").textContent;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = document.getElementById("promptCopyBtn");
-    btn.textContent = "Copied!";
-    setTimeout(() => { btn.textContent = "Copy prompt"; }, 2000);
-  });
-});
 
 /* ── Scroll animations ── */
 function initScrollAnimations() {
@@ -421,7 +437,7 @@ function initScrollAnimations() {
   }, { threshold: 0.08 });
 
   document.querySelectorAll(
-    ".era, .phil-card, .modern-card, .danish-item, .ai-question, .ai-thinker, .fav-card, .thread-node, .echo-item, .impact-card, .tradeoff-card, .agent-card"
+    ".era, .phil-card, .modern-card, .danish-item, .ai-question, .ai-thinker, .fav-card, .thread-node, .echo-item, .impact-card, .tradeoff-card"
   ).forEach(el => observer.observe(el));
 }
 
@@ -437,7 +453,7 @@ function initNav() {
 }
 
 /* ── Boot ── */
-buildAgentGrid();
+buildAgentTabs();
 buildEchoes();
 buildAIImpacts();
 buildAITradeoffs();
