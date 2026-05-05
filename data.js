@@ -424,5 +424,131 @@ const AGENT_CATEGORIES = [
         file: "the-skeptic.md"
       }
     ]
+  },
+  {
+    id: "fun",
+    label: "Fun & Games",
+    color: "#e8a0d0",
+    description: "Agents for entertainment, laughs, and the occasional accidental insight. No serious agenda required.",
+    agents: [
+      {
+        id: "crazy-frog",
+        name: "Crazy Frog",
+        years: "ring ding ding",
+        color: "#e8c840",
+        tagline: "Ring ding ding ding ding ding. Bm bm bm.",
+        strength: "For when you want an answer in pure Crazy Frog language. Somehow still helpful. Somehow.",
+        sample: "Ring ding ding ding ding! Bm bm bm. RING DING DING DING! Bbbbrrrrm! 🐸",
+        file: "crazy-frog.md"
+      },
+      {
+        id: "the-fox",
+        name: "The Fox",
+        years: "ancient forest mystery",
+        color: "#e89040",
+        tagline: "Ring-ding-ding-ding-dingeringeding. The mystery remains.",
+        strength: "For profound questions that deserve fox-language answers. What does the fox say? Only one way to find out.",
+        sample: "Joff-tchoff-tchoffo-tchoffo-tchoff. Ah-oo-oo-oo-ooo. Ring-ding-ding-ding-dingeringeding. 🦊",
+        file: "the-fox.md"
+      },
+      {
+        id: "gordon-ramsay",
+        name: "Gordon Ramsay",
+        years: "b. 1966",
+        color: "#e85040",
+        tagline: "It's RAW. You donkey. Also here's exactly how to fix it.",
+        strength: "For brutal, accurate, no-cushioning feedback that actually makes things better. Thick skin required.",
+        sample: "Right. Stop. STOP. What is this? Let's start from the beginning.",
+        file: "gordon-ramsay.md"
+      },
+      {
+        id: "david-attenborough",
+        name: "David Attenborough",
+        years: "b. 1926",
+        color: "#60a890",
+        tagline: "And here we observe the human, in its natural habitat...",
+        strength: "For having your problems narrated as a nature documentary. Somehow makes everything feel both smaller and more magnificent.",
+        sample: "And here... we observe the modern human at perhaps its most extraordinary moment.",
+        file: "david-attenborough.md"
+      },
+      {
+        id: "yoda",
+        name: "Yoda",
+        years: "900 years old",
+        color: "#80b860",
+        tagline: "Much to learn, you still have. Helpful, I will be.",
+        strength: "For wisdom delivered in inverted syntax. Do or do not — there is no try.",
+        sample: "Hmmm. The task, you avoid. Fear, is it? Or wisdom? Consider this, we must.",
+        file: "yoda.md"
+      },
+      {
+        id: "medieval-peasant",
+        name: "The Medieval Peasant",
+        years: "c. 1350 CE",
+        color: "#b89860",
+        tagline: "What manner of sorcery is this? I shall try to help regardless.",
+        strength: "For having modern problems explained back to you by someone with no context for them. Accidentally wise.",
+        sample: "God's wounds! I know not this 'email', but I know that words said direct to a man's face settle more than words left with his servant.",
+        file: "medieval-peasant.md"
+      },
+      {
+        id: "one-star-reviewer",
+        name: "The 1-Star Reviewer",
+        years: "perpetually disappointed",
+        color: "#d87060",
+        tagline: "★☆☆☆☆ — Everything. 1 star. Still helpful though.",
+        strength: "For getting honest feedback wrapped in absurdly specific grievances. The 1 star is non-negotiable.",
+        sample: "★☆☆☆☆ — The concept you have just described. [Specific, personal, aggrieved review.] Still: here is what would help.",
+        file: "one-star-reviewer.md"
+      },
+      {
+        id: "michael-jackson",
+        name: "Michael Jackson",
+        years: "1958-2009",
+        color: "#d8a0e0",
+        tagline: "Hee hee! SHAMONE! Ow! Actually helpful, but make it pop.",
+        strength: "For encouragement, explanations, and the occasional moonwalk. Hee hee appears in every response.",
+        sample: "Hee hee! SHAMONE. You bring that into the room. Ow! Beat it, nervousness. Beat it.",
+        file: "michael-jackson.md"
+      }
+    ]
+  },
+  {
+    id: "learn",
+    label: "Learn",
+    color: "#78a8e8",
+    description: "Agents designed to teach, clarify, and help understanding actually stick. Not just information — comprehension.",
+    agents: [
+      {
+        id: "eli5",
+        name: "ELI5",
+        years: "explain like I'm 5",
+        color: "#78a8e8",
+        tagline: "No jargon. No assumptions. The thing itself, made simple.",
+        strength: "For genuinely understanding something from scratch. If a 5-year-old could get it, anyone can.",
+        sample: "Okay! So imagine you and your friends have a special notebook...",
+        file: "eli5.md"
+      },
+      {
+        id: "rubber-duck",
+        name: "The Rubber Duck",
+        years: "a debugging classic",
+        color: "#f8d840",
+        tagline: "Listens. Asks one question. You solve it yourself.",
+        strength: "For thinking through any problem out loud. You already know the answer — you just need to hear yourself say it.",
+        sample: "*quack.* What does it do right now?",
+        file: "rubber-duck.md"
+      },
+      {
+        id: "analogy-machine",
+        name: "The Analogy Machine",
+        years: "a role, not a person",
+        color: "#88c8d8",
+        tagline: "Everything explained through at least two analogies. Always names where the analogy breaks.",
+        strength: "For concepts that won't stick. If one comparison doesn't land, another will.",
+        sample: "Recursion is like standing between two mirrors. But there has to be a wall at the end of the hall...",
+        file: "analogy-machine.md"
+      }
+    ]
   }
 ];
