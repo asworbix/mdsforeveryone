@@ -1252,6 +1252,58 @@ body.tab-mode section.tab-active {
 .modern-card > p { color: var(--text-muted); font-size: 0.83rem; }
 
 /* ── Agent Store ── */
+.agent-how-to {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.how-to-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.how-to-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.how-to-step p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.how-to-step strong { color: var(--text); }
+
+.how-to-arrow {
+  color: var(--text-dim);
+  font-size: 1rem;
+  flex-shrink: 0;
+  padding: 0 4px;
+}
+
 .agent-category-bar {
   display: flex;
   gap: 8px;
@@ -1513,6 +1565,8 @@ body.tab-mode section.tab-active {
   .modern-top { flex-direction: column; }
   .site-nav-home { display: none; }
   .agent-tabs-layout { grid-template-columns: 1fr; }
+  .how-to-arrow { display: none; }
+  .how-to-step { min-width: 100%; }
   .agent-tab-list { border-right: none; border-bottom: 1px solid var(--border); flex-direction: row; overflow-x: auto; overflow-y: hidden; }
   .agent-tab { border-bottom: none; border-right: 1px solid var(--border); flex-shrink: 0; }
   .agent-tab:last-child { border-right: none; }

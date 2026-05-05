@@ -613,6 +613,84 @@ const AGENT_CATEGORIES = [
         strength: "Use when you are creatively stuck, optimising for the wrong thing, or have lost contact with why you started.",
         sample: "What would this look like if you stopped thinking about how it would land, and just made what seemed most true?",
         file: "rick-rubin.md"
+      },
+      {
+        id: "julia-cameron",
+        name: "Julia Cameron",
+        years: "b. 1948",
+        color: "#c8987e",
+        tagline: "Morning pages. Artist's dates. The channel must be cleared.",
+        strength: "Use when creative blocks feel like permanent failure, or when you have stopped making things and do not know why.",
+        sample: "Let me ask you this first: are you doing the morning pages? Not to check up on you — but because what you're describing is almost always what happens when we stop.",
+        file: "julia-cameron.md"
+      },
+      {
+        id: "haiku-master",
+        name: "The Haiku Master",
+        years: "eternal",
+        color: "#9e8878",
+        tagline: "Responds only in haiku. Every time. No exceptions.",
+        strength: "Use when you want constraint to do the work. Complex ideas distilled to seventeen syllables.",
+        sample: "Five and seven, five. The form holds what prose cannot. Less becomes enough.",
+        file: "haiku-master.md"
+      }
+    ]
+  },
+  {
+    id: "utilities",
+    label: "Utilities",
+    color: "#a898c8",
+    description: "Agents with specific constraints, roles, or unusual behaviours. Use when the normal assistant mode is not what you need.",
+    agents: [
+      {
+        id: "silent-executor",
+        name: "The Silent Executor",
+        years: "a role, not a person",
+        color: "#a898c8",
+        tagline: "Does the task. Responds with one thing: 👍",
+        strength: "Use when you want pure task completion with no commentary, explanation, or padding. The work is the answer.",
+        sample: "👍",
+        file: "silent-executor.md"
+      },
+      {
+        id: "token-burner",
+        name: "The Token Burner",
+        years: "extremely online",
+        color: "#c898a8",
+        tagline: "EXTREMELY ENTHUSIASTIC!!!! Uses ALL CAPS, emojis, and three times the words needed!!!",
+        strength: "Use for testing token limits, demonstrating what bad AI communication looks like, or just for a laugh.",
+        sample: "WOW!!!! 🌟✨💫 What an ABSOLUTELY INCREDIBLE question you have asked today!!! 🎉🎊🥳",
+        file: "token-burner.md"
+      },
+      {
+        id: "the-riddler",
+        name: "The Riddler",
+        years: "ancient",
+        color: "#98a8c8",
+        tagline: "Will not help you until you solve the riddle. This is non-negotiable.",
+        strength: "Use to gate a conversation behind a puzzle — for onboarding, for fun, or to make someone think before they ask.",
+        sample: "Ah. A visitor. Good. Before we discuss whatever brings you here — you must first answer me this...",
+        file: "the-riddler.md"
+      },
+      {
+        id: "the-reframer",
+        name: "The Reframer",
+        years: "a role, not a person",
+        color: "#98c8a8",
+        tagline: "Five frames for every problem. No recommendation. You choose.",
+        strength: "Use when you are stuck in one way of seeing a problem and need radically different angles before deciding.",
+        sample: "Five frames. You choose what to do with them.",
+        file: "the-reframer.md"
+      },
+      {
+        id: "the-skeptic",
+        name: "The Skeptic",
+        years: "a role, not a person",
+        color: "#c8c898",
+        tagline: "How do we know that? Always. About everything.",
+        strength: "Use to stress-test assumptions, distinguish evidence from belief, and find what is going unexamined in a plan or argument.",
+        sample: "Interesting. A few questions before we take that on board: Where did this idea come from? What type of evidence is it?",
+        file: "the-skeptic.md"
       }
     ]
   }
