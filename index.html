@@ -3,341 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Echoes of Thought - A Philosophy Heritage</title>
+  <title>The Agent Store</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Sticky tab bar -->
-  <nav class="site-nav" id="siteNav">
-    <a class="site-nav-home tab-link" href="#home" data-tab="home">Echoes of Thought</a>
-    <div class="site-nav-tabs">
-      <a class="tab-link" href="#echoes" data-tab="echoes">Echoes</a>
-      <a class="tab-link" href="#ai" data-tab="ai">AI &amp; Tech</a>
-      <a class="tab-link" href="#timeline" data-tab="timeline">Timeline</a>
-      <a class="tab-link" href="#philosophers" data-tab="philosophers">Philosophers</a>
-      <a class="tab-link" href="#danish" data-tab="danish">Danish Now</a>
-      <a class="tab-link" href="#favourites" data-tab="favourites">Favourites</a>
-      <a class="tab-link" href="#modern" data-tab="modern">Modern Voices</a>
-      <a class="tab-link" href="#agents" data-tab="agents">Agent Store</a>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header-inner">
+        <div class="site-header-left">
+          <h1 class="site-title">The Agent Store</h1>
+          <p class="site-tagline">Thinkers, strategists, creatives, and utilities — each as a Claude system prompt.</p>
+        </div>
+        <div class="site-header-right">
+          <span class="site-count" id="agentCount"></span>
+        </div>
+      </div>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="hero" id="home">
-    <div class="hero-inner">
-      <div class="hero-eyebrow">A living archive</div>
-      <h1>Echoes of<br>Thought</h1>
-      <p class="hero-thesis">
-        The best thinkers across philosophy,<br>
-        strategy, teams, and creative practice — as agents.
-      </p>
-      <p class="hero-sub">
-        Every major idea in contemporary life traces back to a question
-        asked long ago. This site maps those echoes and puts the thinkers
-        in your hands — as Claude agents you can converse with directly.
-      </p>
-      <nav class="hero-nav">
-        <a href="#echoes">Echoes</a>
-        <a href="#ai">AI &amp; Tech</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#philosophers">Philosophers</a>
-        <a href="#danish">Danish Now</a>
-        <a href="#favourites">Andreas' Favourites</a>
-        <a href="#agents">Agent Store</a>
-      </nav>
-    </div>
-    <div class="hero-scroll-hint">scroll</div>
   </header>
 
-  <!-- Echoes - centerpiece -->
-  <section id="echoes" class="section-echoes">
+  <main class="main-store">
     <div class="container">
-      <div class="echoes-intro">
-        <span class="section-eyebrow">The central argument</span>
-        <h2 class="section-title">Nothing is new.<br>Everything is urgent.</h2>
-        <p class="section-sub">
-          Mindfulness, authentic selfhood, the meaning crisis, social justice, the burnout epidemic -
-          each is a retelling of something philosophers settled centuries ago.
-          Select a concept and trace it back.
-        </p>
-      </div>
-      <div class="echoes-accordion" id="echoesAccordion"></div>
-    </div>
-  </section>
 
-  <!-- AI & Modern Technology -->
-  <section id="ai" class="section-ai">
-    <div class="container">
-      <div class="ai-intro">
-        <span class="section-eyebrow">The present disruption</span>
-        <h2 class="section-title">AI and the<br>Human Question</h2>
-        <p class="section-sub">
-          AI does not invent new philosophical problems. It makes the old ones
-          impossible to ignore - and adds stakes that no previous generation had to reckon with.
-        </p>
-      </div>
-
-      <div class="ai-pipeline">
-        <div class="pipeline-step">
-          <span class="pipeline-label">1st disruption</span>
-          <h4>Print &amp; Mass Media</h4>
-          <p>The crowd gets a voice. Kierkegaard panics.</p>
-        </div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-step">
-          <span class="pipeline-label">2nd disruption</span>
-          <h4>Social Media</h4>
-          <p>The crowd becomes the algorithm. Identity is performed, optimised, monetised.</p>
-        </div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-step pipeline-step--active">
-          <span class="pipeline-label">Now</span>
-          <h4>AI</h4>
-          <p>The algorithm starts thinking. Or does it? Philosophy cannot agree on what thinking even is.</p>
-        </div>
-      </div>
-
-      <h3 class="ai-block-title">What is actually changing</h3>
-      <div class="ai-impacts" id="aiImpacts"></div>
-
-      <h3 class="ai-block-title">The tradeoffs</h3>
-      <p class="ai-block-sub">For every gain, something is lost. These are not bugs - they are the structure of the disruption.</p>
-      <div class="ai-tradeoffs" id="aiTradeoffs"></div>
-
-      <h3 class="ai-block-title">Open questions</h3>
-      <div class="ai-questions" id="aiQuestions"></div>
-
-      <h3 class="ai-block-title">Thinkers on the threshold</h3>
-      <div class="ai-thinkers" id="aiThinkers"></div>
-    </div>
-  </section>
-
-  <!-- Timeline -->
-  <section id="timeline" class="section-mid">
-    <div class="container">
-      <span class="section-eyebrow">Historical context</span>
-      <h2 class="section-title">The Arc of an Idea</h2>
-      <p class="section-sub">
-        Philosophy did not evolve linearly. It spiralled - each age rediscovering
-        and reframing the same core questions.
-      </p>
-      <div class="timeline">
-
-        <div class="era">
-          <div class="era-dot"></div>
-          <div class="era-content">
-            <span class="era-date">~600 BCE - 400 CE</span>
-            <h3>Ancient Greece &amp; Rome</h3>
-            <p>The word itself - <em>philosophia</em>, love of wisdom - was coined here.
-            Questions of being, virtue, knowledge and the good life were asked
-            for the first time with systematic rigour.</p>
-            <div class="era-tags">
-              <span>Metaphysics</span><span>Ethics</span><span>Logic</span><span>Politics</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="era">
-          <div class="era-dot"></div>
-          <div class="era-content">
-            <span class="era-date">400 - 1400</span>
-            <h3>Medieval Synthesis</h3>
-            <p>Greek philosophy was absorbed and reframed through Christian,
-            Islamic and Jewish theology. Aristotle was rediscovered; Plato's
-            Forms became divine archetypes.</p>
-            <div class="era-tags">
-              <span>Scholasticism</span><span>Faith &amp; Reason</span><span>Natural Law</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="era">
-          <div class="era-dot"></div>
-          <div class="era-content">
-            <span class="era-date">1400 - 1800</span>
-            <h3>Early Modern</h3>
-            <p>The self moved to centre stage. Descartes's doubt, Locke's blank
-            slate, Hume's scepticism, Kant's critical turn - each a variant of
-            ancient questions now filtered through science and individualism.</p>
-            <div class="era-tags">
-              <span>Epistemology</span><span>Rationalism</span><span>Empiricism</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="era">
-          <div class="era-dot"></div>
-          <div class="era-content">
-            <span class="era-date">1800 - 1900</span>
-            <h3>19th Century</h3>
-            <p>History and human existence became philosophical subjects.
-            Hegel's dialectic, Marx's materialism, Kierkegaard's leap of faith,
-            Nietzsche's will to power - all grappling with what it means to be
-            alive in a changing world.</p>
-            <div class="era-tags">
-              <span>Existentialism</span><span>Dialectics</span><span>Nihilism</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="era">
-          <div class="era-dot"></div>
-          <div class="era-content">
-            <span class="era-date">1900 - 2000</span>
-            <h3>20th Century</h3>
-            <p>Two world wars fractured certainty. Phenomenology, analytic
-            philosophy, structuralism, post-structuralism - philosophy splintered
-            yet each fragment echoed ancient disputes about language, reality
-            and the good life.</p>
-            <div class="era-tags">
-              <span>Phenomenology</span><span>Analytic</span><span>Post-structuralism</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="era">
-          <div class="era-dot active"></div>
-          <div class="era-content">
-            <span class="era-date">2000 - Now</span>
-            <h3>The Present</h3>
-            <p>Mindfulness re-packages Stoicism. Effective Altruism re-packages
-            Utilitarian calculus. The self-help shelf is dense with re-dressed
-            Epicureanism. AI forces every question back open. Are we still asking
-            new questions - or just listening to old echoes at machine speed?</p>
-            <div class="era-tags">
-              <span>AI Ethics</span><span>New Materialism</span><span>Eco-philosophy</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Philosophers grid -->
-  <section id="philosophers" class="section-dark">
-    <div class="container">
-      <span class="section-eyebrow">The source material</span>
-      <h2 class="section-title">The Pillars</h2>
-      <p class="section-sub">
-        The thinkers whose ideas keep surfacing in every era. Click a card to see
-        what they actually said - and where it shows up today.
-      </p>
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="greek">Greek</button>
-        <button class="filter-btn" data-filter="modern">Early Modern</button>
-        <button class="filter-btn" data-filter="19th">19th C.</button>
-        <button class="filter-btn" data-filter="20th">20th C.</button>
-      </div>
-      <div class="phil-grid" id="philGrid"></div>
-    </div>
-  </section>
-
-  <!-- Modal -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal" id="modal">
-      <button class="modal-close" id="modalClose">✕</button>
-      <div class="modal-body" id="modalBody"></div>
-    </div>
-  </div>
-
-  <!-- Danish Now -->
-  <section id="danish" class="section-mid">
-    <div class="container">
-      <span class="section-eyebrow">Local voices</span>
-      <h2 class="section-title">The Danish Now</h2>
-      <p class="section-sub">
-        From Kierkegaard to Løgstrup to Brinkmann - Denmark keeps producing
-        thinkers who refuse to separate the philosophical from the lived.
-      </p>
-      <div class="danish-list" id="danishList"></div>
-    </div>
-  </section>
-
-  <!-- Andreas' Favourites -->
-  <section id="favourites" class="section-dark">
-    <div class="container">
-      <div class="fav-header">
-        <div class="fav-label">Andreas' favourites</div>
-        <h2 class="section-title">Andreas' Favourites</h2>
-        <p class="section-sub">
-          Aristotle says we flourish through what we repeatedly do.
-          Kierkegaard says leap anyway. Nietzsche says God is dead - now create.
-          Rubin says the act of creating is itself the answer.
-          Four thinkers. One thread.
-        </p>
-      </div>
-      <div class="fav-grid" id="favGrid"></div>
-      <div class="fav-thread">
-        <div class="thread-nodes" id="threadNodes"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modern Voices -->
-  <section id="modern" class="section-light">
-    <div class="container">
-      <span class="section-eyebrow">Voices extending the tradition</span>
-      <h2 class="section-title">Modern Voices</h2>
-      <p class="section-sub">
-        Philosophers working today who are genuinely extending the tradition -
-        or at least making it breathe again.
-      </p>
-      <div class="modern-grid" id="modernGrid"></div>
-    </div>
-  </section>
-
-  <!-- Agent Store -->
-  <section id="agents" class="section-ai">
-    <div class="container">
-      <span class="section-eyebrow">Claude system prompts</span>
-      <h2 class="section-title">The Agent Store</h2>
-      <p class="section-sub">
-        Philosophers, strategists, team facilitators, and creative practitioners — each as a Claude agent.
-        Select a category, pick an agent, copy the prompt.
-      </p>
-      <div class="agent-how-to">
+      <div class="how-to">
         <div class="how-to-step">
           <span class="how-to-num">1</span>
-          <p>Pick an agent below and click <strong>Copy prompt</strong></p>
+          <p>Pick an agent and click <strong>Copy prompt</strong></p>
         </div>
         <div class="how-to-arrow">→</div>
         <div class="how-to-step">
           <span class="how-to-num">2</span>
-          <p>Open <strong>claude.ai</strong> and start a new project or conversation</p>
+          <p>Open <strong>claude.ai</strong> and start a new project</p>
         </div>
         <div class="how-to-arrow">→</div>
         <div class="how-to-step">
           <span class="how-to-num">3</span>
-          <p>Go to <strong>Project instructions</strong> (or the system prompt field) and paste</p>
+          <p>Paste into <strong>Project instructions</strong></p>
         </div>
         <div class="how-to-arrow">→</div>
         <div class="how-to-step">
           <span class="how-to-num">4</span>
-          <p>Start your conversation. The agent will hold character.</p>
+          <p>Start your conversation</p>
         </div>
       </div>
-      <div class="agent-category-bar" id="agentCategoryBar"></div>
-      <div class="agent-tabs-layout">
-        <div class="agent-tab-list" id="agentTabList"></div>
-        <div class="agent-tab-panel" id="agentTabPanel"></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
+      <div class="category-bar" id="categoryBar"></div>
+
+      <div class="store-layout">
+        <div class="agent-list" id="agentList"></div>
+        <div class="agent-panel" id="agentPanel"></div>
+      </div>
+
+    </div>
+  </main>
+
   <footer class="footer">
     <div class="container">
-      <p>
-        <strong>Echoes of Thought</strong> - an open research companion.
-        Philosophy as heritage, not museum piece.
-      </p>
-      <p class="footer-note">
-        Content is intentionally editorial and exploratory. Dates and
-        attributions are approximate starting points for deeper research.
-      </p>
+      <p>The Agent Store — open source. Prompts live in the <code>agents/</code> folder.</p>
     </div>
   </footer>
 
