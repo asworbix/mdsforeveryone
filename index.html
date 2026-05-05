@@ -280,28 +280,14 @@
       <span class="section-eyebrow">Claude system prompts</span>
       <h2 class="section-title">The Agent Store</h2>
       <p class="section-sub">
-        Each philosopher as a Claude agent. Copy any prompt, paste it as a system prompt in Claude, and have a conversation grounded in their actual thought — not a caricature.
+        Each philosopher as a Claude agent. Select one, copy the prompt, paste it as a system prompt in Claude.
       </p>
-      <div class="agent-grid" id="agentGrid"></div>
+      <div class="agent-tabs-layout">
+        <div class="agent-tab-list" id="agentTabList"></div>
+        <div class="agent-tab-panel" id="agentTabPanel"></div>
+      </div>
     </div>
   </section>
-
-  <!-- Prompt modal -->
-  <div class="prompt-overlay" id="promptOverlay">
-    <div class="prompt-modal" id="promptModal">
-      <div class="prompt-modal-header" id="promptModalHeader">
-        <div>
-          <h3 id="promptModalName"></h3>
-          <span id="promptModalYears" class="phil-years"></span>
-        </div>
-        <div class="prompt-modal-actions">
-          <button class="prompt-copy-btn" id="promptCopyBtn">Copy prompt</button>
-          <button class="prompt-close-btn" id="promptClose">✕</button>
-        </div>
-      </div>
-      <pre class="prompt-content" id="promptContent"></pre>
-    </div>
-  </div>
 
   <!-- Footer -->
   <footer class="footer">
