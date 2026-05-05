@@ -168,7 +168,7 @@ function initScrollAnimations() {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll(".era, .phil-card, .modern-card, .danish-item, .echo-step, .ai-question, .ai-thinker").forEach(el => {
+  document.querySelectorAll(".era, .phil-card, .modern-card, .danish-item, .echo-step, .ai-question, .ai-thinker, .fav-card, .thread-node").forEach(el => {
     observer.observe(el);
   });
 }
@@ -181,6 +181,52 @@ function initNav() {
       const target = document.querySelector(a.getAttribute("href"));
       if (target) target.scrollIntoView({ behavior: "smooth" });
     });
+  });
+}
+
+/* ── Favourites ── */
+function buildFavourites() {
+  const grid = document.getElementById("favGrid");
+  FAVOURITES.forEach((f, i) => {
+    const card = document.createElement("div");
+    card.className = "fav-card";
+    card.style.setProperty("--fav-color", f.color);
+    card.innerHTML = `
+      <div class="fav-number" style="color:${f.color}">${String(i + 1).padStart(2, "0")}</div>
+      <div class="fav-card-inner">
+        <div class="fav-meta" style="color:${f.color}">${f.years}</div>
+        <h3 class="fav-name">${f.name}</h3>
+        <p class="fav-tagline">${f.tagline}</p>
+        <blockquote class="fav-pull" style="border-color:${f.color}">"${f.pull}"</blockquote>
+        <div class="fav-body">
+          <h4 style="color:${f.color}">Why this one</h4>
+          <p>${f.why}</p>
+          <h4 style="color:${f.color}">The tension</h4>
+          <p>${f.keyTension}</p>
+          <h4 style="color:${f.color}">Why it resonates now</h4>
+          <p>${f.resonance}</p>
+          <div class="fav-works">
+            ${f.works.map(w => `<span class="work-tag">${w}</span>`).join("")}
+          </div>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  const thread = document.getElementById("threadNodes");
+  FAV_THREAD.forEach(t => {
+    const el = document.createElement("div");
+    el.className = "thread-node";
+    el.innerHTML = `
+      <div class="thread-node-names">
+        <span style="color:${t.color}">${t.from}</span>
+        <span class="thread-arrow">→</span>
+        <span style="color:${t.color}">${t.to}</span>
+      </div>
+      <p class="thread-note">${t.note}</p>
+    `;
+    thread.appendChild(el);
   });
 }
 
@@ -247,6 +293,7 @@ initFilters();
 buildModernGrid();
 buildDanishList();
 buildEchoes();
+buildFavourites();
 buildAIQuestions();
 buildAIThinkers();
 initScrollAnimations();

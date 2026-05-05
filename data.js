@@ -355,6 +355,74 @@ const DANISH_VOICES = [
   }
 ];
 
+const FAVOURITES = [
+  {
+    name: "Aristotle",
+    years: "384-322 BCE",
+    color: "#a8c89e",
+    pull: "We are what we repeatedly do.",
+    tagline: "The philosopher of habit, character and the good life",
+    why: "Aristotle is the one to return to when the abstract gets unbearable. He does not ask what reality ultimately is - he asks how to live well in the reality you have. Eudaimonia is not a feeling or a destination; it is a quality of activity, built through repetition until virtue becomes second nature. Everything you do is shaping the person doing it.",
+    keyTension: "Where Plato points up to ideal Forms, Aristotle points down at the actual world. Where Nietzsche demands you create new values, Aristotle says the values are already there in the structure of human flourishing - you just have to practice them.",
+    resonance: "The idea that excellence is a habit, not a gift, is as radical now as it was in Athens. Every creative discipline, every serious craft, every meaningful relationship runs on Aristotelian logic even when it does not know it.",
+    works: ["Nicomachean Ethics", "Politics", "Poetics", "De Anima"]
+  },
+  {
+    name: "Søren Kierkegaard",
+    years: "1813-1855",
+    color: "#c8c89e",
+    pull: "The most common form of despair is not being who you are.",
+    tagline: "The philosopher of the individual, the leap and the crowd",
+    why: "Kierkegaard is the one to read when you feel the weight of other people's expectations - when the crowd tells you who to be and part of you almost believes it. He insists, over and over, that the individual is irreducible. No system, no public, no algorithm can make the choice for you. At some point you either leap or you do not.",
+    keyTension: "He is the direct ancestor of existentialism but would have hated the label. He is a Christian thinker but writes under so many pseudonyms that no single voice is 'his'. The form of his writing enacts its content: you cannot receive it passively. You have to decide what it means.",
+    resonance: "His critique of 'the crowd' as a force that dissolves individual conscience was written in 1840s Copenhagen and reads like a commentary on the social media feed. The crowd has never been louder. The need to remain an individual has never been harder.",
+    works: ["Either/Or", "Fear and Trembling", "The Sickness Unto Death", "Stages on Life's Way"]
+  },
+  {
+    name: "Friedrich Nietzsche",
+    years: "1844-1900",
+    color: "#c89e9e",
+    pull: "God is dead. God remains dead. And we have killed him.",
+    tagline: "The philosopher of value creation, will to power and self-overcoming",
+    why: "The death of God is not an atheist slogan - it is a diagnosis. The metaphysical framework that gave Western civilisation its values, its meaning, its sense of cosmic order - that framework has collapsed. Nietzsche does not celebrate this. He is terrified of what it means. The question it leaves is the hardest one: if the old values are gone, who creates the new ones?",
+    keyTension: "Nietzsche is the most dangerous philosopher to read without reading carefully. His language of power, the Ubermensch, the will to power - all were catastrophically misread by the 20th century. What he actually describes is not domination of others but self-overcoming: the relentless work of becoming who you actually are, rather than what history handed you.",
+    resonance: "Every serious creative person eventually confronts Nietzsche's problem: the received values do not fit the life you are trying to build. You cannot inherit your values from a tradition you no longer believe in. You have to forge them - which is terrifying and the only honest option.",
+    works: ["Thus Spoke Zarathustra", "Beyond Good and Evil", "The Gay Science", "On the Genealogy of Morality"]
+  },
+  {
+    name: "Rick Rubin",
+    years: "b. 1963",
+    color: "#c8a97e",
+    pull: "The work is a reflection of where you are. Not where you want to be.",
+    tagline: "The producer-philosopher of creative presence and artistic surrender",
+    why: "Rubin is not a credentialed philosopher - and that is precisely the point. The Creative Act: A Way of Being (2023) is one of the most genuinely philosophical books published in recent years, and it comes from someone who spent forty years in recording studios listening for what is real. His philosophy is Zen-adjacent, Stoic in practice and deeply Aristotelian in its insistence that the creative life is not a career but a way of being.",
+    keyTension: "Rubin sits in a strange position between the ancient and the contemporary. He talks about the universe, sources, and clouds of creativity in language that sounds almost mystical - but his practice is utterly concrete: show up, listen, remove what does not belong, trust the work. It is Aristotle's habit doctrine applied to the recording booth.",
+    resonance: "In an era of personal branding and content strategy, Rubin insists on something radical: the goal is not to impress, not to perform, not to optimise for audience - but to be honest. The work is an attempt at truth. That is a philosophical position, and it connects directly to Kierkegaard's demand for authentic individual commitment.",
+    works: ["The Creative Act: A Way of Being", "Broken Record (podcast)", "Tetragrammaton (podcast)"]
+  }
+];
+
+const FAV_THREAD = [
+  {
+    from: "Aristotle",
+    to: "Kierkegaard",
+    color: "#a8c89e",
+    note: "Aristotle: virtue is built through repeated choice. Kierkegaard: but choice requires a leap no system can make for you."
+  },
+  {
+    from: "Kierkegaard",
+    to: "Nietzsche",
+    color: "#c8c89e",
+    note: "Both attack the crowd, the herd, the system. Kierkegaard leaps toward God. Nietzsche leaps away from him."
+  },
+  {
+    from: "Nietzsche",
+    to: "Rubin",
+    color: "#c89e9e",
+    note: "Nietzsche: you must create your own values. Rubin: and the only honest way to do that is through the work itself."
+  }
+];
+
 const AI_QUESTIONS = [
   {
     id: "consciousness",
