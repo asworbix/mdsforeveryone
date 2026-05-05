@@ -31,6 +31,77 @@ body {
 .container { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
 
 /* ── Hero ── */
+/* ── Site Nav (sticky tab bar) ── */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: 52px;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 0;
+}
+
+.site-nav-home {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+  padding-right: 20px;
+  margin-right: 12px;
+  border-right: 1px solid var(--border);
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.site-nav-home:hover { color: var(--accent); }
+
+.site-nav-tabs {
+  display: flex;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-nav-tabs::-webkit-scrollbar { display: none; }
+
+.site-nav-tabs .tab-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.77rem;
+  padding: 0 16px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.site-nav-tabs .tab-link:hover { color: var(--text); }
+
+.site-nav-tabs .tab-link.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Tab mode: only active section is shown */
+body.tab-mode .hero { display: none; }
+body.tab-mode section:not(.tab-active) { display: none; }
+body.tab-mode footer { display: none; }
+
+body.tab-mode section.tab-active {
+  min-height: calc(100vh - 52px);
+  margin-top: 52px;
+}
+
+/* ── Hero ── */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -42,7 +113,7 @@ body {
     radial-gradient(ellipse 100% 80% at 50% -10%, rgba(200,169,126,0.09) 0%, transparent 65%),
     radial-gradient(ellipse 60% 40% at 80% 80%, rgba(143,168,200,0.04) 0%, transparent 60%),
     var(--bg-dark);
-  padding: 100px 28px 80px;
+  padding: 152px 28px 80px;
   position: relative;
 }
 
@@ -1410,6 +1481,7 @@ body {
   .modal { padding: 24px; }
   .danish-header { flex-direction: column; }
   .modern-top { flex-direction: column; }
+  .site-nav-home { display: none; }
   .agent-tabs-layout { grid-template-columns: 1fr; }
   .agent-tab-list { border-right: none; border-bottom: 1px solid var(--border); flex-direction: row; overflow-x: auto; overflow-y: hidden; }
   .agent-tab { border-bottom: none; border-right: 1px solid var(--border); flex-shrink: 0; }

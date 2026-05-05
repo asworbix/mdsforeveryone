@@ -441,15 +441,53 @@ function initScrollAnimations() {
   ).forEach(el => observer.observe(el));
 }
 
-/* ── Nav smooth scroll ── */
-function initNav() {
-  document.querySelectorAll("a[href^='#']").forEach(a => {
+/* ── Tab navigation ── */
+const TAB_SECTIONS = ["echoes", "ai", "timeline", "philosophers", "danish", "favourites", "modern", "agents"];
+
+function activateTab(id) {
+  const isHome = !id || id === "home";
+
+  document.body.classList.toggle("tab-mode", !isHome);
+
+  TAB_SECTIONS.forEach(s => {
+    const el = document.getElementById(s);
+    if (el) el.classList.toggle("tab-active", s === id);
+  });
+
+  document.querySelectorAll(".site-nav-tabs .tab-link").forEach(l => {
+    l.classList.toggle("active", l.dataset.tab === id);
+  });
+
+  if (!isHome) window.scrollTo(0, 0);
+}
+
+function initTabs() {
+  document.querySelectorAll(".tab-link").forEach(a => {
     a.addEventListener("click", e => {
       e.preventDefault();
-      const target = document.querySelector(a.getAttribute("href"));
-      if (target) target.scrollIntoView({ behavior: "smooth" });
+      const tab = a.dataset.tab || "home";
+      history.pushState(null, "", a.getAttribute("href"));
+      activateTab(tab);
     });
   });
+
+  // Hero nav links (pill buttons) also trigger tab switching
+  document.querySelectorAll(".hero-nav a").forEach(a => {
+    a.addEventListener("click", e => {
+      e.preventDefault();
+      const href = a.getAttribute("href");
+      const tab = href ? href.replace("#", "") : "home";
+      history.pushState(null, "", href);
+      activateTab(tab);
+    });
+  });
+
+  window.addEventListener("popstate", () => {
+    activateTab(window.location.hash.replace("#", "") || "home");
+  });
+
+  // Load initial state from hash
+  activateTab(window.location.hash.replace("#", "") || "home");
 }
 
 /* ── Boot ── */
@@ -465,4 +503,4 @@ buildModernGrid();
 buildDanishList();
 buildFavourites();
 initScrollAnimations();
-initNav();
+initTabs();
