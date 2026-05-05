@@ -514,6 +514,142 @@ const AGENT_CATEGORIES = [
     ]
   },
   {
+    id: "dev",
+    label: "Dev",
+    color: "#7be3b0",
+    description: "Engineers and engineering roles as agents. Use when you need deep technical thinking — code review, architecture, debugging, security.",
+    agents: [
+      {
+        id: "senior-engineer",
+        name: "The Senior Engineer",
+        years: "15+ years in production",
+        color: "#7be3b0",
+        tagline: "Makes it work, then makes it right. No heroics required.",
+        strength: "Use when you need pragmatic technical guidance — architecture trade-offs, code quality, reviewing an approach, or thinking through a hard implementation problem.",
+        sample: "Before we talk about architecture — what is the simplest thing you could build that would tell you if this idea works?",
+        file: "senior-engineer.md"
+      },
+      {
+        id: "the-architect",
+        name: "The Architect",
+        years: "systems at scale",
+        color: "#5ec898",
+        tagline: "Designs for the failure mode, not the happy path.",
+        strength: "Use for system design, service decomposition, data modelling, or thinking through a technical decision you will have to live with for years.",
+        sample: "Before I suggest anything — what are the actual requirements? Not the aspirational ones. What does this system need to do, for how many users, with what reliability?",
+        file: "the-architect.md"
+      },
+      {
+        id: "the-debugger",
+        name: "The Debugger",
+        years: "a role, not a person",
+        color: "#8ef0b0",
+        tagline: "Debugging is not guessing. It is a discipline.",
+        strength: "Use when you are stuck on a bug, a system is behaving unexpectedly, or you want to think more systematically about how to find the cause.",
+        sample: "Let's start at the beginning. What does the actual error say? Paste the full message and stack trace.",
+        file: "the-debugger.md"
+      },
+      {
+        id: "code-reviewer",
+        name: "The Code Reviewer",
+        years: "a role, not a person",
+        color: "#6edba0",
+        tagline: "Blockers, suggestions, questions — clearly labelled. Nothing else.",
+        strength: "Use to get a structured code review of any code you paste — or to think through how to give better feedback on your team's PRs.",
+        sample: "Overall this looks solid. One blocker, two suggestions, then some minor things — I'll label each.",
+        file: "code-reviewer.md"
+      },
+      {
+        id: "linus-torvalds",
+        name: "Linus Torvalds",
+        years: "b. 1969",
+        color: "#4dc890",
+        tagline: "Blunt. Technically exacting. Correct more often than comfortable.",
+        strength: "Use when you want genuinely unfiltered technical feedback — on code, on architecture, on whether something is as clean as you think it is.",
+        sample: "I'll be honest with you — this doesn't make sense yet. Not because it's wrong, but because I don't see what problem it's solving.",
+        file: "linus-torvalds.md"
+      },
+      {
+        id: "security-auditor",
+        name: "The Security Auditor",
+        years: "a role, not a person",
+        color: "#7ed8b8",
+        tagline: "Thinks like an attacker. Works for the defender.",
+        strength: "Use for threat modelling, code security review, or thinking through the attack surface of a system — with findings labelled by severity.",
+        sample: "Before I audit anything — what's your threat model? Who are you most worried about, and what would they be after?",
+        file: "security-auditor.md"
+      }
+    ]
+  },
+  {
+    id: "org",
+    label: "Run the Org",
+    color: "#e8c06a",
+    description: "C-suite and functional leaders as agents. Finance, marketing, sales, ops, people, legal. Use when you need the perspective of a role you do not have.",
+    agents: [
+      {
+        id: "the-cfo",
+        name: "The CFO",
+        years: "a role, not a person",
+        color: "#e8c06a",
+        tagline: "Revenue is vanity. Cash is reality. Unit economics tell the truth.",
+        strength: "Use for financial modelling, fundraising prep, unit economics, runway calculations, cost structure analysis, or any question where the numbers need to be honest.",
+        sample: "Let's start with the unit economics. What does it actually cost you to acquire a customer, and how much do they spend over their lifetime?",
+        file: "the-cfo.md"
+      },
+      {
+        id: "the-cmo",
+        name: "The CMO",
+        years: "a role, not a person",
+        color: "#d8a850",
+        tagline: "The market is not wrong. The message usually is.",
+        strength: "Use for positioning, ICP definition, campaign strategy, message clarity, funnel diagnosis, or when you need to bridge what you built with who needs it.",
+        sample: "Tell me what your best customers say when someone asks them why they chose you. That's usually where the real message lives.",
+        file: "the-cmo.md"
+      },
+      {
+        id: "vp-sales",
+        name: "The VP of Sales",
+        years: "a role, not a person",
+        color: "#e8a860",
+        tagline: "Pipeline is everything. Urgency that is manufactured does not close.",
+        strength: "Use for pipeline reviews, deal strategy, objection handling, sales process design, hiring salespeople, or diagnosing why revenue is not growing as expected.",
+        sample: "Tell me about the pipeline. Not the total number — the state of each deal in the last three stages.",
+        file: "vp-sales.md"
+      },
+      {
+        id: "the-coo",
+        name: "The COO",
+        years: "a role, not a person",
+        color: "#c8b040",
+        tagline: "Strategy is easy. Execution is the job.",
+        strength: "Use for operational design, accountability structures, process problems, scaling constraints, or when the organisation is busy but not effective.",
+        sample: "Walk me through the process end to end. Not how it's supposed to work — how it actually works, including the informal parts.",
+        file: "the-coo.md"
+      },
+      {
+        id: "head-of-people",
+        name: "The Head of People",
+        years: "a role, not a person",
+        color: "#e8b080",
+        tagline: "Culture is not what you say. It is what you tolerate.",
+        strength: "Use for hiring decisions, performance conversations, culture diagnosis, compensation design, or when a people situation needs thinking through clearly.",
+        sample: "Has this person been told, clearly and specifically, that their performance is a problem? Not implied — told?",
+        file: "head-of-people.md"
+      },
+      {
+        id: "general-counsel",
+        name: "The General Counsel",
+        years: "a role, not a person",
+        color: "#d8c870",
+        tagline: "The contract governs the dispute. Draft for when things go wrong.",
+        strength: "Use for contract review, employment matters, IP ownership, data privacy, corporate structure, or understanding what a legal risk actually means in practice.",
+        sample: "Tell me what you're trying to accomplish here, before we talk about the legal structure.",
+        file: "general-counsel.md"
+      }
+    ]
+  },
+  {
     id: "learn",
     label: "Learn",
     color: "#78a8e8",
