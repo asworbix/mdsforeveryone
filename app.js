@@ -17,10 +17,8 @@ function buildCatNav() {
   AGENT_CATEGORIES.forEach((cat, ci) => {
     const btn = document.createElement("button");
     btn.className = "cat-btn";
-    btn.style.setProperty("--cat-color", cat.color);
     btn.setAttribute("aria-label", `${cat.label} — ${cat.agents.length} agents`);
     btn.innerHTML = `
-      <span class="cat-dot"></span>
       <span class="cat-label">${cat.label}</span>
       <span class="cat-count">${cat.agents.length}</span>
     `;
@@ -58,17 +56,15 @@ function renderList(agents) {
     btn.setAttribute("role", "option");
     btn.dataset.ci = agent._ci;
     btn.dataset.idx = agent._idx;
-    btn.style.setProperty("--agent-color", agent.color);
 
-    const initials = agent.name.split(" ").map(w => w[0]).join("").slice(0, 2);
+    const initials = agent.name.split(" ").map(w => w[0]).join("").slice(0, 2).toUpperCase();
     const subLabel = agent._catLabel || agent.years;
-    const subStyle = agent._catColor ? `style="color:${agent._catColor}"` : "";
 
     btn.innerHTML = `
-      <div class="agent-avatar" style="background:${agent.color}18;border-color:${agent.color}45;color:${agent.color}">${initials}</div>
+      <div class="agent-avatar">${initials}</div>
       <div class="agent-info">
         <span class="agent-name">${agent.name}</span>
-        <span class="agent-meta" ${subStyle}>${subLabel}</span>
+        <span class="agent-meta">${subLabel}</span>
       </div>
     `;
     btn.addEventListener("click", () => setAgent(agent._ci, agent._idx));
@@ -98,23 +94,23 @@ function renderPanel(agent) {
   welcome.style.display = "none";
   panel.classList.add("visible");
 
-  const initials = agent.name.split(" ").map(w => w[0]).join("").slice(0, 2);
+  const initials = agent.name.split(" ").map(w => w[0]).join("").slice(0, 2).toUpperCase();
 
   panel.innerHTML = `
-    <div class="panel-header" style="--agent-color:${agent.color}">
-      <div class="panel-avatar" style="background:${agent.color}18;border-color:${agent.color};color:${agent.color}">${initials}</div>
+    <div class="panel-header">
+      <div class="panel-avatar">${initials}</div>
       <div>
         <h2 class="panel-name">${agent.name}</h2>
         <span class="panel-years">${agent.years}</span>
       </div>
     </div>
     <div class="panel-body">
-      <p class="panel-tagline" style="color:${agent.color}">${agent.tagline}</p>
+      <p class="panel-tagline">${agent.tagline}</p>
       <p class="panel-strength">${agent.strength}</p>
       <blockquote class="panel-sample">"${agent.sample}"</blockquote>
       <div class="panel-actions">
-        <button class="btn-copy" id="btnCopy" style="--agent-color:${agent.color}">Copy prompt</button>
-        <a class="btn-open" id="btnOpen" href="https://claude.ai/new" target="_blank" rel="noopener" style="--agent-color:${agent.color}">Open in Claude ↗</a>
+        <button class="btn-copy" id="btnCopy">Copy prompt</button>
+        <a class="btn-open" id="btnOpen" href="https://claude.ai/new" target="_blank" rel="noopener">Open in Claude ↗</a>
       </div>
       <div class="panel-prompt">
         <div class="panel-prompt-bar">
@@ -175,7 +171,7 @@ function setupSearch() {
       cat.agents.forEach((agent, idx) => {
         const hay = [agent.name, agent.tagline, agent.strength, cat.label].join(" ").toLowerCase();
         if (hay.includes(q)) {
-          results.push({ ...agent, _ci: ci, _idx: idx, _catLabel: cat.label, _catColor: cat.color });
+          results.push({ ...agent, _ci: ci, _idx: idx, _catLabel: cat.label });
         }
       });
     });
