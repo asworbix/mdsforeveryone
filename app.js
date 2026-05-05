@@ -338,18 +338,39 @@ function buildFavourites() {
   });
 }
 
-/* ── Agent Store (tabbed) ── */
+/* ── Agent Store (categorised tabs) ── */
 const RAW_BASE = "https://raw.githubusercontent.com/asworbix/reinvent/main/agents/";
 const promptCache = {};
+let activeCatIndex = 0;
 
 function buildAgentTabs() {
-  const tabList = document.getElementById("agentTabList");
-  const panel = document.getElementById("agentTabPanel");
+  const catBar = document.getElementById("agentCategoryBar");
 
-  AGENT_STORE.forEach((agent, i) => {
+  AGENT_CATEGORIES.forEach((cat, ci) => {
+    const btn = document.createElement("button");
+    btn.className = "agent-category-btn";
+    btn.textContent = cat.label;
+    btn.style.setProperty("--cat-color", cat.color);
+    btn.addEventListener("click", () => selectCategory(ci));
+    catBar.appendChild(btn);
+  });
+
+  selectCategory(0);
+}
+
+function selectCategory(ci) {
+  activeCatIndex = ci;
+  const cat = AGENT_CATEGORIES[ci];
+  const tabList = document.getElementById("agentTabList");
+
+  document.querySelectorAll(".agent-category-btn").forEach((btn, i) => {
+    btn.classList.toggle("active", i === ci);
+  });
+
+  tabList.innerHTML = "";
+  cat.agents.forEach((agent, i) => {
     const tab = document.createElement("button");
     tab.className = "agent-tab";
-    tab.dataset.index = i;
     tab.style.setProperty("--agent-color", agent.color);
     tab.innerHTML = `
       <div class="agent-tab-avatar" style="background:${agent.color}18;border-color:${agent.color}44;color:${agent.color}">
@@ -360,15 +381,15 @@ function buildAgentTabs() {
         <span class="agent-tab-years">${agent.years}</span>
       </div>
     `;
-    tab.addEventListener("click", () => selectAgent(i));
+    tab.addEventListener("click", () => selectAgent(ci, i));
     tabList.appendChild(tab);
   });
 
-  selectAgent(0);
+  selectAgent(ci, 0);
 }
 
-function selectAgent(index) {
-  const agent = AGENT_STORE[index];
+function selectAgent(ci, index) {
+  const agent = AGENT_CATEGORIES[ci].agents[index];
   const panel = document.getElementById("agentTabPanel");
 
   document.querySelectorAll(".agent-tab").forEach((t, i) => {
