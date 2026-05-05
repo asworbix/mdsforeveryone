@@ -1,73 +1,109 @@
 const RAW_BASE = "https://raw.githubusercontent.com/asworbix/reinvent/main/agents/";
 const promptCache = {};
-let activeCatIndex = 0;
+let activeCat = 0;
+let activeCi = null;
+let activeIdx = null;
 
-/* ── Count total agents ── */
-function updateCount() {
-  const total = AGENT_CATEGORIES.reduce((sum, c) => sum + c.agents.length, 0);
+/* ── Count ── */
+function initCount() {
+  const total = AGENT_CATEGORIES.reduce((s, c) => s + c.agents.length, 0);
   const el = document.getElementById("agentCount");
-  if (el) el.textContent = total + " agents";
+  if (el) el.textContent = `${total} agents`;
 }
 
-/* ── Category bar ── */
-function buildCategoryBar() {
-  const bar = document.getElementById("categoryBar");
+/* ── Category nav ── */
+function buildCatNav() {
+  const nav = document.getElementById("catNav");
   AGENT_CATEGORIES.forEach((cat, ci) => {
     const btn = document.createElement("button");
     btn.className = "cat-btn";
     btn.style.setProperty("--cat-color", cat.color);
-    btn.innerHTML = `<span class="cat-label">${cat.label}</span><span class="cat-count">${cat.agents.length}</span>`;
-    btn.addEventListener("click", () => selectCategory(ci));
-    bar.appendChild(btn);
+    btn.setAttribute("aria-label", `${cat.label} — ${cat.agents.length} agents`);
+    btn.innerHTML = `
+      <span class="cat-dot"></span>
+      <span class="cat-label">${cat.label}</span>
+      <span class="cat-count">${cat.agents.length}</span>
+    `;
+    btn.addEventListener("click", () => {
+      clearSearch();
+      setCategory(ci);
+    });
+    nav.appendChild(btn);
   });
+}
+
+function setCatActive(ci) {
+  document.querySelectorAll(".cat-btn").forEach((b, i) => b.classList.toggle("active", i === ci));
 }
 
 /* ── Agent list ── */
-function selectCategory(ci) {
-  activeCatIndex = ci;
-  const cat = AGENT_CATEGORIES[ci];
+function setCategory(ci) {
+  activeCat = ci;
+  setCatActive(ci);
+  renderList(AGENT_CATEGORIES[ci].agents.map((a, i) => ({ ...a, _ci: ci, _idx: i })));
+}
 
-  document.querySelectorAll(".cat-btn").forEach((btn, i) => {
-    btn.classList.toggle("active", i === ci);
-  });
-
+function renderList(agents) {
   const list = document.getElementById("agentList");
   list.innerHTML = "";
-  cat.agents.forEach((agent, i) => {
+
+  if (agents.length === 0) {
+    list.innerHTML = `<p class="no-results">No agents match</p>`;
+    return;
+  }
+
+  agents.forEach(agent => {
     const btn = document.createElement("button");
     btn.className = "agent-item";
+    btn.setAttribute("role", "option");
+    btn.dataset.ci = agent._ci;
+    btn.dataset.idx = agent._idx;
     btn.style.setProperty("--agent-color", agent.color);
+
+    const initials = agent.name.split(" ").map(w => w[0]).join("").slice(0, 2);
+    const subLabel = agent._catLabel || agent.years;
+    const subStyle = agent._catColor ? `style="color:${agent._catColor}"` : "";
+
     btn.innerHTML = `
-      <div class="agent-item-avatar" style="background:${agent.color}15;border-color:${agent.color}40;color:${agent.color}">
-        ${agent.name.split(" ").map(w => w[0]).join("").slice(0, 2)}
-      </div>
-      <div class="agent-item-info">
-        <span class="agent-item-name">${agent.name}</span>
-        <span class="agent-item-years">${agent.years}</span>
+      <div class="agent-avatar" style="background:${agent.color}18;border-color:${agent.color}45;color:${agent.color}">${initials}</div>
+      <div class="agent-info">
+        <span class="agent-name">${agent.name}</span>
+        <span class="agent-meta" ${subStyle}>${subLabel}</span>
       </div>
     `;
-    btn.addEventListener("click", () => selectAgent(ci, i));
+    btn.addEventListener("click", () => setAgent(agent._ci, agent._idx));
     list.appendChild(btn);
   });
+}
 
-  selectAgent(ci, 0);
+function updateListActive() {
+  document.querySelectorAll(".agent-item").forEach(el => {
+    const match = Number(el.dataset.ci) === activeCi && Number(el.dataset.idx) === activeIdx;
+    el.classList.toggle("active", match);
+  });
 }
 
 /* ── Agent panel ── */
-function selectAgent(ci, index) {
-  const agent = AGENT_CATEGORIES[ci].agents[index];
+function setAgent(ci, idx) {
+  activeCi = ci;
+  activeIdx = idx;
+  updateListActive();
+  renderPanel(AGENT_CATEGORIES[ci].agents[idx]);
+}
+
+function renderPanel(agent) {
+  const welcome = document.getElementById("welcome");
   const panel = document.getElementById("agentPanel");
 
-  document.querySelectorAll(".agent-item").forEach((el, i) => {
-    el.classList.toggle("active", i === index);
-  });
+  welcome.style.display = "none";
+  panel.classList.add("visible");
+
+  const initials = agent.name.split(" ").map(w => w[0]).join("").slice(0, 2);
 
   panel.innerHTML = `
     <div class="panel-header" style="--agent-color:${agent.color}">
-      <div class="panel-avatar" style="background:${agent.color}15;border-color:${agent.color};color:${agent.color}">
-        ${agent.name.split(" ").map(w => w[0]).join("").slice(0, 2)}
-      </div>
-      <div class="panel-id">
+      <div class="panel-avatar" style="background:${agent.color}18;border-color:${agent.color};color:${agent.color}">${initials}</div>
+      <div>
         <h2 class="panel-name">${agent.name}</h2>
         <span class="panel-years">${agent.years}</span>
       </div>
@@ -78,7 +114,7 @@ function selectAgent(ci, index) {
       <blockquote class="panel-sample">"${agent.sample}"</blockquote>
       <div class="panel-actions">
         <button class="btn-copy" id="btnCopy" style="--agent-color:${agent.color}">Copy prompt</button>
-        <a class="btn-open" id="btnOpen" href="#" target="_blank" rel="noopener" style="--agent-color:${agent.color}">Open in Claude</a>
+        <a class="btn-open" id="btnOpen" href="https://claude.ai/new" target="_blank" rel="noopener" style="--agent-color:${agent.color}">Open in Claude ↗</a>
       </div>
       <div class="panel-prompt">
         <div class="panel-prompt-bar">
@@ -89,39 +125,33 @@ function selectAgent(ci, index) {
     </div>
   `;
 
-  /* Copy button */
-  document.getElementById("btnCopy").addEventListener("click", () => {
+  document.getElementById("btnCopy").addEventListener("click", function () {
     const text = document.getElementById("promptContent").textContent;
     if (text === "Loading…" || text.startsWith("Could not")) return;
     navigator.clipboard.writeText(text).then(() => {
-      const btn = document.getElementById("btnCopy");
-      btn.textContent = "Copied!";
-      setTimeout(() => { btn.textContent = "Copy prompt"; }, 2000);
+      this.textContent = "Copied!";
+      setTimeout(() => { this.textContent = "Copy prompt"; }, 2000);
     });
   });
 
-  /* Open in Claude — deep link with pre-filled system prompt via URL */
-  const openBtn = document.getElementById("btnOpen");
-  openBtn.href = "https://claude.ai/new";
-  openBtn.addEventListener("click", e => {
+  document.getElementById("btnOpen").addEventListener("click", () => {
     const text = document.getElementById("promptContent").textContent;
     if (text !== "Loading…" && !text.startsWith("Could not")) {
       navigator.clipboard.writeText(text);
     }
   });
+  document.getElementById("btnOpen").title =
+    "Prompt copied — paste into Project instructions on claude.ai";
 
-  /* Fetch prompt */
-  const cacheKey = agent.file;
-  if (promptCache[cacheKey]) {
-    document.getElementById("promptContent").textContent = promptCache[cacheKey];
-    updateOpenLink(openBtn, promptCache[cacheKey]);
+  if (promptCache[agent.file]) {
+    document.getElementById("promptContent").textContent = promptCache[agent.file];
   } else {
     fetch(RAW_BASE + agent.file)
       .then(r => { if (!r.ok) throw new Error(); return r.text(); })
-      .then(text => {
-        promptCache[cacheKey] = text;
+      .then(txt => {
+        promptCache[agent.file] = txt;
         const el = document.getElementById("promptContent");
-        if (el) { el.textContent = text; updateOpenLink(openBtn, text); }
+        if (el) el.textContent = txt;
       })
       .catch(() => {
         const el = document.getElementById("promptContent");
@@ -130,13 +160,43 @@ function selectAgent(ci, index) {
   }
 }
 
-function updateOpenLink(btn, promptText) {
-  /* Claude doesn't support URL-encoded system prompts yet — clicking copies first,
-     then opens claude.ai/new so the user can paste into Project instructions */
-  if (btn) btn.title = "Prompt copied — paste into Project instructions on claude.ai";
+/* ── Search ── */
+function setupSearch() {
+  const input = document.getElementById("searchInput");
+
+  input.addEventListener("input", () => {
+    const q = input.value.trim().toLowerCase();
+    if (!q) { clearSearch(); return; }
+
+    setCatActive(-1);
+
+    const results = [];
+    AGENT_CATEGORIES.forEach((cat, ci) => {
+      cat.agents.forEach((agent, idx) => {
+        const hay = [agent.name, agent.tagline, agent.strength, cat.label].join(" ").toLowerCase();
+        if (hay.includes(q)) {
+          results.push({ ...agent, _ci: ci, _idx: idx, _catLabel: cat.label, _catColor: cat.color });
+        }
+      });
+    });
+
+    renderList(results);
+    if (results.length > 0) setAgent(results[0]._ci, results[0]._idx);
+  });
+
+  input.addEventListener("keydown", e => {
+    if (e.key === "Escape") clearSearch();
+  });
+}
+
+function clearSearch() {
+  const input = document.getElementById("searchInput");
+  if (input) input.value = "";
+  setCategory(activeCat);
 }
 
 /* ── Boot ── */
-updateCount();
-buildCategoryBar();
-selectCategory(0);
+initCount();
+buildCatNav();
+setCategory(0);
+setupSearch();

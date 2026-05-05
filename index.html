@@ -3,66 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Agent Store</title>
+  <title>MDs for Everyone</title>
+  <meta name="description" content="System prompts for Claude — thinkers, strategists, creatives, and utilities, ready to use." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container">
-      <div class="site-header-inner">
-        <div class="site-header-left">
-          <h1 class="site-title">The Agent Store</h1>
-          <p class="site-tagline">Thinkers, strategists, creatives, and utilities — each as a Claude system prompt.</p>
-        </div>
-        <div class="site-header-right">
-          <span class="site-count" id="agentCount"></span>
-        </div>
-      </div>
-    </div>
-  </header>
+  <div class="app">
 
-  <main class="main-store">
-    <div class="container">
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar" aria-label="Agent navigation">
 
-      <div class="how-to">
-        <div class="how-to-step">
-          <span class="how-to-num">1</span>
-          <p>Pick an agent and click <strong>Copy prompt</strong></p>
-        </div>
-        <div class="how-to-arrow">→</div>
-        <div class="how-to-step">
-          <span class="how-to-num">2</span>
-          <p><strong>Web:</strong> claude.ai → new project → Project instructions<br>
-             <strong>Desktop:</strong> Claude app → new project → Set instructions</p>
-        </div>
-        <div class="how-to-arrow">→</div>
-        <div class="how-to-step">
-          <span class="how-to-num">3</span>
-          <p>Paste the prompt and save</p>
-        </div>
-        <div class="how-to-arrow">→</div>
-        <div class="how-to-step">
-          <span class="how-to-num">4</span>
-          <p>Start your conversation — the agent holds character</p>
-        </div>
+      <div class="brand">
+        <h1 class="brand-name">MDs for Everyone</h1>
+        <p class="brand-tag">System prompts for Claude, ready to use.</p>
       </div>
 
-      <div class="category-bar" id="categoryBar"></div>
-
-      <div class="store-layout">
-        <div class="agent-list" id="agentList"></div>
-        <div class="agent-panel" id="agentPanel"></div>
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <input
+          class="search-input"
+          id="searchInput"
+          type="search"
+          placeholder="Search agents…"
+          aria-label="Search agents"
+          autocomplete="off"
+        />
       </div>
 
-    </div>
-  </main>
+      <nav class="cat-nav" id="catNav" aria-label="Agent categories"></nav>
 
-  <footer class="footer">
-    <div class="container">
-      <p>The Agent Store — open source. Prompts live in the <code>agents/</code> folder.</p>
-    </div>
-  </footer>
+      <div class="agent-list" id="agentList" role="listbox" aria-label="Agents in selected category"></div>
+
+      <div class="sidebar-footer">
+        <span id="agentCount" class="count-badge"></span>
+        <a class="gh-link" href="https://github.com/asworbix/reinvent" target="_blank" rel="noopener" aria-label="View on GitHub">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- ── Main area ── -->
+    <main class="main" id="main">
+
+      <div class="welcome" id="welcome">
+        <div class="welcome-inner">
+          <p class="welcome-eyebrow">Welcome to</p>
+          <h2 class="welcome-title">MDs for Everyone</h2>
+          <p class="welcome-desc">Pick an agent from the sidebar. Each one is a system prompt you can paste into Claude to get a different voice, perspective, or utility.</p>
+
+          <div class="how-to">
+            <div class="how-to-step">
+              <span class="how-to-num">1</span>
+              <div>
+                <p class="how-to-label">Choose an agent</p>
+                <p class="how-to-detail">Browse by category or search above</p>
+              </div>
+            </div>
+            <div class="how-to-arrow" aria-hidden="true">→</div>
+            <div class="how-to-step">
+              <span class="how-to-num">2</span>
+              <div>
+                <p class="how-to-label">Copy the prompt</p>
+                <p class="how-to-detail">Click <strong>Copy prompt</strong> in the agent panel</p>
+              </div>
+            </div>
+            <div class="how-to-arrow" aria-hidden="true">→</div>
+            <div class="how-to-step">
+              <span class="how-to-num">3</span>
+              <div>
+                <p class="how-to-label">Paste into Claude</p>
+                <p class="how-to-detail"><strong>Web:</strong> claude.ai → Project → instructions<br><strong>Desktop:</strong> Claude app → Project → instructions</p>
+              </div>
+            </div>
+            <div class="how-to-arrow" aria-hidden="true">→</div>
+            <div class="how-to-step">
+              <span class="how-to-num">4</span>
+              <div>
+                <p class="how-to-label">Start chatting</p>
+                <p class="how-to-detail">The agent holds character through the conversation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="agent-panel" id="agentPanel"></div>
+
+    </main>
+
+  </div>
 
   <script src="data.js"></script>
   <script src="app.js"></script>
