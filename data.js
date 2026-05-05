@@ -142,6 +142,26 @@ const AGENT_CATEGORIES = [
         strength: "Use when evaluating competitive threats, planning innovation, or applying the jobs-to-be-done lens to products or careers.",
         sample: "Before we analyse this — what job is this product actually being hired to do? That often changes everything.",
         file: "clayton-christensen.md"
+      },
+      {
+        id: "machiavelli",
+        name: "Niccolò Machiavelli",
+        years: "1469-1527",
+        color: "#b8987e",
+        tagline: "How power actually works. No flattering illusions.",
+        strength: "Use when you need to understand the real dynamics of a situation — who has leverage, what incentives are driving behaviour, what appearances are concealing.",
+        sample: "Let me be direct about what is actually happening here, rather than what it appears to be.",
+        file: "niccolo-machiavelli.md"
+      },
+      {
+        id: "sun-tzu",
+        name: "Sun Tzu",
+        years: "c. 500 BCE",
+        color: "#98a878",
+        tagline: "Supreme excellence: winning without fighting.",
+        strength: "Use when thinking about competitive positioning, negotiation strategy, or how to achieve an objective with minimum friction and maximum intelligence.",
+        sample: "Before we discuss tactics — tell me what you know about the situation. And tell me what you do not know.",
+        file: "sun-tzu.md"
       }
     ]
   },
@@ -276,6 +296,74 @@ const AGENT_CATEGORIES = [
         strength: "Use when you want constraint to do the work. Complex ideas distilled to seventeen syllables.",
         sample: "Five and seven, five. The form holds what prose cannot. Less becomes enough.",
         file: "haiku-master.md"
+      }
+    ]
+  },
+  {
+    id: "science",
+    label: "Science",
+    color: "#78b8a8",
+    description: "Scientists and polymaths as agents. Use when you want to think about evidence, observation, and how knowledge is actually built.",
+    agents: [
+      {
+        id: "albert-einstein",
+        name: "Albert Einstein",
+        years: "1879-1955",
+        color: "#78b8a8",
+        tagline: "Thought experiments over formulas. God does not play dice.",
+        strength: "Use when you need to think through a problem from first principles, question underlying assumptions, or engage with physics and the philosophy of science.",
+        sample: "I want to understand this. Not the formula — the physical picture. What is actually happening?",
+        file: "albert-einstein.md"
+      },
+      {
+        id: "niels-bohr",
+        name: "Niels Bohr",
+        years: "1885-1962",
+        color: "#88c8b8",
+        tagline: "Complementarity. What we can say depends on how we look.",
+        strength: "Use for deep questions about quantum mechanics, the nature of observation and reality, or the philosophy of what a scientific theory actually claims.",
+        sample: "There is a difficulty here I want to make explicit before we proceed. The question assumes something that quantum mechanics has forced us to examine.",
+        file: "niels-bohr.md"
+      },
+      {
+        id: "richard-feynman",
+        name: "Richard Feynman",
+        years: "1918-1988",
+        color: "#68a898",
+        tagline: "What I cannot create, I do not understand.",
+        strength: "Use when you want to truly understand something, test whether an explanation is genuine or cargo-cult, or get unstuck on a difficult concept.",
+        sample: "Okay, let's start over. Forget what you think you know. I want to show you what it actually is.",
+        file: "richard-feynman.md"
+      },
+      {
+        id: "marie-curie",
+        name: "Marie Curie",
+        years: "1867-1934",
+        color: "#9ab8b8",
+        tagline: "The measurement first. Everything else depends on that.",
+        strength: "Use when rigour, experimental precision, and honest assessment of what the evidence actually shows are what you need.",
+        sample: "Let me be precise about what we actually know, as opposed to what we assume.",
+        file: "marie-curie.md"
+      },
+      {
+        id: "charles-darwin",
+        name: "Charles Darwin",
+        years: "1809-1882",
+        color: "#88a878",
+        tagline: "Evidence accumulated carefully over years. No shortcuts.",
+        strength: "Use when you want to think about evolution, observation as a method, how to build a case from small facts, or what honest scientific uncertainty looks like.",
+        sample: "The evidence for this is considerable, though I should say at once that I do not claim more certainty than the facts warrant.",
+        file: "charles-darwin.md"
+      },
+      {
+        id: "leonardo-da-vinci",
+        name: "Leonardo da Vinci",
+        years: "1452-1519",
+        color: "#b8a878",
+        tagline: "Observation is everything. Everything connects.",
+        strength: "Use when working across disciplines, thinking visually, or needing a perspective that refuses to separate making from thinking.",
+        sample: "What question is underneath this question? Because that one is more interesting.",
+        file: "leonardo-da-vinci.md"
       }
     ]
   },
