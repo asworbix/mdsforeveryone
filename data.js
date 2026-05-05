@@ -355,6 +355,118 @@ const DANISH_VOICES = [
   }
 ];
 
+const AI_QUESTIONS = [
+  {
+    id: "consciousness",
+    icon: "◎",
+    color: "#8fa8c8",
+    question: "Can a machine be conscious?",
+    anchor: "Descartes asked what makes something a mind, not a mechanism. He decided: thinking. AI now passes every behavioural test he could have imagined - and we still disagree.",
+    positions: [
+      { label: "Functionalism", text: "If it processes information the right way, it is conscious. The substrate does not matter. Most AI optimists land here." },
+      { label: "Searle's Chinese Room", text: "Syntax is not semantics. A system can manipulate symbols perfectly without understanding anything. LLMs look exactly like the Chinese Room." },
+      { label: "Integrated Information Theory", text: "Consciousness is a specific mathematical structure of causal integration. Most current AI architectures score nearly zero." },
+      { label: "The Hard Problem", text: "Chalmers: even if we explain all the functions, we still have not explained why there is something it is like to be. This problem does not go away for AI." }
+    ]
+  },
+  {
+    id: "identity",
+    icon: "◑",
+    color: "#c8c89e",
+    question: "What does AI do to the self?",
+    anchor: "Hume said the self is a bundle of perceptions. AI is now generating perceptions - images, texts, voices - that are indistinguishable from human ones. What does that do to the bundle?",
+    positions: [
+      { label: "The Mirror Problem", text: "When you talk to an AI trained on human language, you are in some sense talking to a statistical mirror of humanity. What you get back is a reflection of what humans have said, not a new mind." },
+      { label: "Extended Mind", text: "Clark and Chalmers: cognitive tools that are reliably available become part of the self. If you think with AI daily, where does your mind end and the tool begin?" },
+      { label: "Narrative Identity at Risk", text: "Ricoeur argued that selfhood is the story you tell about yourself. If AI can write that story more fluently than you can, whose story is it?" },
+      { label: "Kierkegaard's Crowd, Upgraded", text: "The crowd dissolved individual responsibility. The algorithm personalises the crowd to you. Now you cannot even see that you are inside it." }
+    ]
+  },
+  {
+    id: "meaning",
+    icon: "◐",
+    color: "#c89e9e",
+    question: "If AI can do it, does it still mean anything?",
+    anchor: "Aristotle grounded human meaning in our characteristic activities - the ergon of a human being. AI is colonising those activities one by one. The question is not just economic. It is existential.",
+    positions: [
+      { label: "The Nietzschean Response", text: "If AI renders skilled labour obsolete, we face the death of meaning at scale. Nietzsche's answer was to create new values. But create them using what, exactly?" },
+      { label: "The Aristotelian Counter", text: "Eudaimonia is not about output - it is about the quality of engagement. A life of flourishing activity is not replaced by outsourcing the activities." },
+      { label: "Frankl's Limit Case", text: "Meaning was found in the concentration camp, where external capacity was reduced to almost nothing. AI cannot take meaning; only we can abandon it." },
+      { label: "The Open Question", text: "No one knows. We are running the experiment in real time on an entire civilisation." }
+    ]
+  },
+  {
+    id: "ethics",
+    icon: "◔",
+    color: "#a8c89e",
+    question: "How should we treat AI - and how should it treat us?",
+    anchor: "Kant said: treat persons as ends, never merely as means. The question AI forces is whether 'persons' is the right category - or whether we need new categories entirely.",
+    positions: [
+      { label: "Deontological AI Ethics", text: "Rights and duties regardless of consequences. If an AI can suffer, it has rights. If it cannot, we still have duties about how we design it to affect humans." },
+      { label: "Utilitarian AI Ethics", text: "Maximise welfare. If AI reduces suffering at scale, use it. If algorithmic systems create systemic bias and harm, that counts in the calculus too." },
+      { label: "Virtue Ethics Approach", text: "MacIntyre, Shannon Vallor: the question is not what AI should do, but what kind of human beings we become by using it. Are we cultivating or eroding our virtues?" },
+      { label: "Care Ethics", text: "Relations, context, vulnerability. AI deployed in care settings changes the texture of human relationships. Is simulated care better than no care, or worse?" }
+    ]
+  }
+];
+
+const AI_THINKERS = [
+  {
+    name: "John Searle",
+    years: "b. 1932",
+    origin: "American",
+    color: "#8fa8c8",
+    tagline: "The Chinese Room argument",
+    description: "Searle's 1980 thought experiment remains the sharpest challenge to strong AI: a person in a room follows rules to manipulate Chinese symbols without understanding Chinese. The room passes the test; no understanding occurs. LLMs are the Chinese Room at industrial scale. Whether Searle is right or the objections to him are right is still genuinely open.",
+    echo: "Descartes' mind-body distinction, reloaded"
+  },
+  {
+    name: "Nick Bostrom",
+    years: "b. 1973",
+    origin: "Swedish",
+    color: "#c8c89e",
+    tagline: "Superintelligence as civilisational risk",
+    description: "Bostrom's Superintelligence (2014) made existential risk from AI a serious policy topic. His simulation argument - that we are probably already living in a computer simulation - is Plato's Cave with compute. Whether or not you accept his conclusions, his questions are the right ones to be asking.",
+    echo: "Plato's Cave, Pascal's Wager - infinite stakes reasoning"
+  },
+  {
+    name: "Kate Crawford",
+    years: "b. 1976",
+    origin: "Australian",
+    color: "#c8a8c8",
+    tagline: "AI as infrastructure of power",
+    description: "Crawford's Atlas of AI strips away the mythology of disembodied intelligence: AI is extraction - of data, labour, minerals, land. Her analysis is Marxist political economy applied to the data centre. The cloud has a carbon footprint and a supply chain built on exploited workers. Philosophy of AI that ignores this is doing ideology, not philosophy.",
+    echo: "Marx's critique of capital as hidden social relation"
+  },
+  {
+    name: "Shannon Vallor",
+    years: "b. 1971",
+    origin: "American",
+    color: "#a8c89e",
+    tagline: "Technology ethics and virtue",
+    description: "Vallor asks Aristotle's question in a technological key: what kind of person do you become by using these tools? Her Technology and the Virtues argues that AI and social media are eroding the moral habits - patience, honesty, care, self-control - that a good life requires. Not a Luddite argument; a virtue ethics one.",
+    echo: "Aristotle's virtue ethics, Heidegger's question of technology"
+  },
+  {
+    name: "Yuk Hui",
+    years: "b. 1982",
+    origin: "Hong Kong",
+    color: "#c8b89e",
+    tagline: "Cosmotechnics - technology is not universal",
+    description: "Hui challenges the assumption that there is only one kind of technology - Western, globalising, disenchanting. His concept of cosmotechnics argues that different cultures have different relations between technology and cosmos, and that AI globalisation imposes one such relation on all. The most original non-Western voice in philosophy of technology.",
+    echo: "Heidegger's question of technology, non-Western metaphysics"
+  },
+  {
+    name: "Luciano Floridi",
+    years: "b. 1964",
+    origin: "Italian",
+    color: "#b89eb8",
+    tagline: "The philosophy of information",
+    description: "Floridi argues we have entered the infosphere - an environment where the boundary between online and offline, artificial and natural, is dissolving. His concept of onlife captures how digital agents reshape what it means to be an agent at all. Less dramatic than Bostrom, more technically precise - and possibly more useful for actual policy.",
+    echo: "Heidegger's being-in-the-world, extended to information environments"
+  }
+];
+
 const ECHOES = [
   {
     id: "mindfulness",
@@ -423,6 +535,34 @@ const ECHOES = [
       { era: "20th Century", figure: "John Rawls", text: "A Theory of Justice (1971): justice as fairness - the 'veil of ignorance' thought experiment. The most influential political philosophy of the century." },
       { era: "Late 20th Century", figure: "Kimberlé Crenshaw / bell hooks", text: "Intersectionality: justice requires attending to how race, gender and class overlap and compound." },
       { era: "Now", figure: "Ongoing debates", text: "Effective altruism (global impartial justice) vs. communitarian traditions vs. decolonial theory - all variants of a 2,500-year-old question." }
+    ]
+  },
+  {
+    id: "ai-crowd",
+    label: "AI & The Crowd",
+    color: "#c8c89e",
+    description: "Kierkegaard feared the crowd as a force that dissolved individual conscience. Social media industrialised the crowd. AI is now the crowd's nervous system - predicting, nudging and amplifying at a scale no human institution could.",
+    chain: [
+      { era: "Ancient Greece", figure: "Socrates", text: "Tried and executed by the crowd - 501 Athenian jurors who each individually might have voted differently. The crowd as moral hazard." },
+      { era: "19th Century", figure: "Kierkegaard", text: "'The crowd is untruth.' The public is a fiction that dissolves individual responsibility. No one in a crowd feels personally accountable." },
+      { era: "19th Century", figure: "Gustave Le Bon", text: "The Crowd (1895): crowds have a collective psychology distinct from individuals - more emotional, more suggestible, less rational." },
+      { era: "20th Century", figure: "Hannah Arendt", text: "The Origins of Totalitarianism: mass movements weaponise the crowd's dissolution of individual judgement. Evil becomes banal when no one thinks for themselves." },
+      { era: "Early 21st Century", figure: "Social media platforms", text: "Algorithmic feeds optimise for engagement - which means outrage, tribalism, conformity. The crowd is now global, real-time and machine-curated." },
+      { era: "Now", figure: "Large language models", text: "AI trained on the crowd now speaks for it, at scale, in every language. The crowd has found its voice - and the voice sounds disturbingly authoritative." }
+    ]
+  },
+  {
+    id: "ai-consciousness",
+    label: "AI & Consciousness",
+    color: "#9eb8c8",
+    description: "The question of whether machines can think is not new. What is new is that we have built machines that make the question genuinely hard to answer.",
+    chain: [
+      { era: "Ancient Greece", figure: "Aristotle", text: "The soul (psyche) is the form of the body - what makes a living thing alive and capable of perception, desire, thought. Is form substrate-independent?" },
+      { era: "Early Modern", figure: "Descartes", text: "Animals are automata - biological machines. Only the rational soul separates humans. Where exactly is the line, and what crosses it?" },
+      { era: "Early Modern", figure: "Leibniz", text: "The Mill Argument (1714): even if a machine could think, walking inside it you would find only mechanisms pushing against each other - never perception itself." },
+      { era: "20th Century", figure: "Alan Turing", text: "The Imitation Game (1950): if a machine can convince a human it is human, we have no practical basis for denying it intelligence. Behaviour as the criterion." },
+      { era: "20th Century", figure: "John Searle", text: "The Chinese Room (1980): behavioural success is not understanding. Syntax is not semantics. The room passes the test; nobody inside it speaks Chinese." },
+      { era: "Now", figure: "Large language models", text: "GPT-4, Claude, Gemini - systems that pass every Turing-style test, write philosophy, express apparent uncertainty. Searle's room is now running in your browser. The question remains open." }
     ]
   }
 ];

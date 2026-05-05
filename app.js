@@ -168,7 +168,7 @@ function initScrollAnimations() {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll(".era, .phil-card, .modern-card, .danish-item, .echo-step").forEach(el => {
+  document.querySelectorAll(".era, .phil-card, .modern-card, .danish-item, .echo-step, .ai-question, .ai-thinker").forEach(el => {
     observer.observe(el);
   });
 }
@@ -184,11 +184,70 @@ function initNav() {
   });
 }
 
+/* ── AI Questions ── */
+function buildAIQuestions() {
+  const container = document.getElementById("aiQuestions");
+  AI_QUESTIONS.forEach(q => {
+    const el = document.createElement("div");
+    el.className = "ai-question";
+    el.innerHTML = `
+      <div class="ai-question-header" style="border-left-color:${q.color}">
+        <span class="ai-icon" style="color:${q.color}">${q.icon}</span>
+        <div>
+          <h3>${q.question}</h3>
+          <p class="ai-anchor">${q.anchor}</p>
+        </div>
+      </div>
+      <div class="ai-positions">
+        ${q.positions.map(p => `
+          <div class="ai-position">
+            <strong style="color:${q.color}">${p.label}</strong>
+            <p>${p.text}</p>
+          </div>
+        `).join("")}
+      </div>
+    `;
+    const header = el.querySelector(".ai-question-header");
+    const positions = el.querySelector(".ai-positions");
+    header.addEventListener("click", () => {
+      const open = positions.classList.toggle("open");
+      header.classList.toggle("expanded", open);
+    });
+    container.appendChild(el);
+  });
+}
+
+/* ── AI Thinkers ── */
+function buildAIThinkers() {
+  const container = document.getElementById("aiThinkers");
+  AI_THINKERS.forEach(t => {
+    const el = document.createElement("div");
+    el.className = "ai-thinker";
+    el.innerHTML = `
+      <div class="ai-thinker-top">
+        <div class="ai-thinker-avatar" style="background:${t.color}22;border-color:${t.color};color:${t.color}">
+          ${t.name.split(" ").map(w => w[0]).join("").slice(0,2)}
+        </div>
+        <div>
+          <h4>${t.name}</h4>
+          <span class="ai-thinker-meta">${t.origin} · ${t.years}</span>
+        </div>
+        <span class="echo-badge">${t.echo}</span>
+      </div>
+      <p class="ai-thinker-tagline" style="color:${t.color}">${t.tagline}</p>
+      <p>${t.description}</p>
+    `;
+    container.appendChild(el);
+  });
+}
+
 /* ── Boot ── */
 buildPhilGrid();
 initFilters();
 buildModernGrid();
 buildDanishList();
 buildEchoes();
+buildAIQuestions();
+buildAIThinkers();
 initScrollAnimations();
 initNav();
