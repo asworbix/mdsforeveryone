@@ -11,29 +11,96 @@
   <!-- Hero -->
   <header class="hero">
     <div class="hero-inner">
-      <div class="hero-label">A living archive</div>
-      <h1>Echoes of Thought</h1>
+      <div class="hero-eyebrow">A living archive</div>
+      <h1>Echoes of<br>Thought</h1>
+      <p class="hero-thesis">
+        Modern philosophy is mostly repetition.<br>
+        AI is the newest proof.
+      </p>
       <p class="hero-sub">
-        From the agora of Athens to the streets of Copenhagen - tracing the
-        ideas that refuse to die, and asking whether modern philosophy is truly
-        new or a beautiful re-telling.
+        Every major idea in contemporary life traces back to a question
+        asked 2,000 years ago in Athens. This site maps the echoes -
+        and asks what happens when the machines join the conversation.
       </p>
       <nav class="hero-nav">
+        <a href="#echoes">Echoes</a>
+        <a href="#ai">AI &amp; Tech</a>
         <a href="#timeline">Timeline</a>
         <a href="#philosophers">Philosophers</a>
-        <a href="#modern">Modern Voices</a>
         <a href="#danish">Danish Now</a>
-        <a href="#echoes">Echoes</a>
-        <a href="#favourites">Favourites</a>
-        <a href="#ai">AI &amp; Philosophy</a>
+        <a href="#favourites">Andreas' Favourites</a>
       </nav>
     </div>
-    <div class="hero-scroll-hint">↓</div>
+    <div class="hero-scroll-hint">scroll</div>
   </header>
 
-  <!-- Timeline strip -->
-  <section id="timeline" class="section-dark">
+  <!-- Echoes - centerpiece -->
+  <section id="echoes" class="section-echoes">
     <div class="container">
+      <div class="echoes-intro">
+        <span class="section-eyebrow">The central argument</span>
+        <h2 class="section-title">Nothing is new.<br>Everything is urgent.</h2>
+        <p class="section-sub">
+          Mindfulness, authentic selfhood, the meaning crisis, social justice, the burnout epidemic -
+          each is a retelling of something philosophers settled centuries ago.
+          Select a concept and trace it back.
+        </p>
+      </div>
+      <div class="echoes-accordion" id="echoesAccordion"></div>
+    </div>
+  </section>
+
+  <!-- AI & Modern Technology -->
+  <section id="ai" class="section-ai">
+    <div class="container">
+      <div class="ai-intro">
+        <span class="section-eyebrow">The present disruption</span>
+        <h2 class="section-title">AI and the<br>Human Question</h2>
+        <p class="section-sub">
+          AI does not invent new philosophical problems. It makes the old ones
+          impossible to ignore - and adds stakes that no previous generation had to reckon with.
+        </p>
+      </div>
+
+      <div class="ai-pipeline">
+        <div class="pipeline-step">
+          <span class="pipeline-label">1st disruption</span>
+          <h4>Print &amp; Mass Media</h4>
+          <p>The crowd gets a voice. Kierkegaard panics.</p>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <span class="pipeline-label">2nd disruption</span>
+          <h4>Social Media</h4>
+          <p>The crowd becomes the algorithm. Identity is performed, optimised, monetised.</p>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step pipeline-step--active">
+          <span class="pipeline-label">Now</span>
+          <h4>AI</h4>
+          <p>The algorithm starts thinking. Or does it? Philosophy cannot agree on what thinking even is.</p>
+        </div>
+      </div>
+
+      <h3 class="ai-block-title">What is actually changing</h3>
+      <div class="ai-impacts" id="aiImpacts"></div>
+
+      <h3 class="ai-block-title">The tradeoffs</h3>
+      <p class="ai-block-sub">For every gain, something is lost. These are not bugs - they are the structure of the disruption.</p>
+      <div class="ai-tradeoffs" id="aiTradeoffs"></div>
+
+      <h3 class="ai-block-title">Open questions</h3>
+      <div class="ai-questions" id="aiQuestions"></div>
+
+      <h3 class="ai-block-title">Thinkers on the threshold</h3>
+      <div class="ai-thinkers" id="aiThinkers"></div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" class="section-mid">
+    <div class="container">
+      <span class="section-eyebrow">Historical context</span>
       <h2 class="section-title">The Arc of an Idea</h2>
       <p class="section-sub">
         Philosophy did not evolve linearly. It spiralled - each age rediscovering
@@ -41,11 +108,11 @@
       </p>
       <div class="timeline">
 
-        <div class="era" data-era="ancient">
+        <div class="era">
           <div class="era-dot"></div>
           <div class="era-content">
-            <span class="era-date">~600 BCE – 400 CE</span>
-            <h3>Ancient Greece & Rome</h3>
+            <span class="era-date">~600 BCE - 400 CE</span>
+            <h3>Ancient Greece &amp; Rome</h3>
             <p>The word itself - <em>philosophia</em>, love of wisdom - was coined here.
             Questions of being, virtue, knowledge and the good life were asked
             for the first time with systematic rigour.</p>
@@ -55,24 +122,24 @@
           </div>
         </div>
 
-        <div class="era" data-era="medieval">
+        <div class="era">
           <div class="era-dot"></div>
           <div class="era-content">
-            <span class="era-date">400 – 1400</span>
+            <span class="era-date">400 - 1400</span>
             <h3>Medieval Synthesis</h3>
             <p>Greek philosophy was absorbed and reframed through Christian,
             Islamic and Jewish theology. Aristotle was rediscovered; Plato's
             Forms became divine archetypes.</p>
             <div class="era-tags">
-              <span>Scholasticism</span><span>Faith & Reason</span><span>Natural Law</span>
+              <span>Scholasticism</span><span>Faith &amp; Reason</span><span>Natural Law</span>
             </div>
           </div>
         </div>
 
-        <div class="era" data-era="early-modern">
+        <div class="era">
           <div class="era-dot"></div>
           <div class="era-content">
-            <span class="era-date">1400 – 1800</span>
+            <span class="era-date">1400 - 1800</span>
             <h3>Early Modern</h3>
             <p>The self moved to centre stage. Descartes's doubt, Locke's blank
             slate, Hume's scepticism, Kant's critical turn - each a variant of
@@ -83,10 +150,10 @@
           </div>
         </div>
 
-        <div class="era" data-era="19th">
+        <div class="era">
           <div class="era-dot"></div>
           <div class="era-content">
-            <span class="era-date">1800 – 1900</span>
+            <span class="era-date">1800 - 1900</span>
             <h3>19th Century</h3>
             <p>History and human existence became philosophical subjects.
             Hegel's dialectic, Marx's materialism, Kierkegaard's leap of faith,
@@ -98,10 +165,10 @@
           </div>
         </div>
 
-        <div class="era" data-era="20th">
+        <div class="era">
           <div class="era-dot"></div>
           <div class="era-content">
-            <span class="era-date">1900 – 2000</span>
+            <span class="era-date">1900 - 2000</span>
             <h3>20th Century</h3>
             <p>Two world wars fractured certainty. Phenomenology, analytic
             philosophy, structuralism, post-structuralism - philosophy splintered
@@ -113,17 +180,17 @@
           </div>
         </div>
 
-        <div class="era" data-era="now">
+        <div class="era">
           <div class="era-dot active"></div>
           <div class="era-content">
-            <span class="era-date">2000 – Now</span>
+            <span class="era-date">2000 - Now</span>
             <h3>The Present</h3>
             <p>Mindfulness re-packages Stoicism. Effective Altruism re-packages
             Utilitarian calculus. The self-help shelf is dense with re-dressed
-            Epicureanism. Are we still asking new questions - or just listening
-            to old echoes?</p>
+            Epicureanism. AI forces every question back open. Are we still asking
+            new questions - or just listening to old echoes at machine speed?</p>
             <div class="era-tags">
-              <span>New Materialism</span><span>AI Ethics</span><span>Eco-philosophy</span>
+              <span>AI Ethics</span><span>New Materialism</span><span>Eco-philosophy</span>
             </div>
           </div>
         </div>
@@ -133,12 +200,13 @@
   </section>
 
   <!-- Philosophers grid -->
-  <section id="philosophers" class="section-light">
+  <section id="philosophers" class="section-dark">
     <div class="container">
+      <span class="section-eyebrow">The source material</span>
       <h2 class="section-title">The Pillars</h2>
       <p class="section-sub">
-        A handful of thinkers whose ideas keep re-surfacing across every age.
-        Click a card to explore their legacy.
+        The thinkers whose ideas keep surfacing in every era. Click a card to see
+        what they actually said - and where it shows up today.
       </p>
       <div class="filter-bar">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -159,26 +227,14 @@
     </div>
   </div>
 
-  <!-- Modern Voices -->
-  <section id="modern" class="section-dark">
-    <div class="container">
-      <h2 class="section-title">Modern Voices</h2>
-      <p class="section-sub">
-        Philosophers working today who are genuinely extending the tradition -
-        or at least making it breathe again.
-      </p>
-      <div class="modern-grid" id="modernGrid"></div>
-    </div>
-  </section>
-
   <!-- Danish Now -->
   <section id="danish" class="section-mid">
     <div class="container">
+      <span class="section-eyebrow">Local voices</span>
       <h2 class="section-title">The Danish Now</h2>
       <p class="section-sub">
-        Denmark has long punched above its weight philosophically - from
-        Kierkegaard to Løgstrup. Today a new generation of writers, academics
-        and self-proclaimed philosophers continues the conversation.
+        From Kierkegaard to Løgstrup to Brinkmann - Denmark keeps producing
+        thinkers who refuse to separate the philosophical from the lived.
       </p>
       <div class="danish-list" id="danishList"></div>
     </div>
@@ -199,64 +255,21 @@
       </div>
       <div class="fav-grid" id="favGrid"></div>
       <div class="fav-thread">
-        <div class="thread-line"></div>
         <div class="thread-nodes" id="threadNodes"></div>
       </div>
     </div>
   </section>
 
-  <!-- Echoes interactive -->
-  <section id="echoes" class="section-dark">
+  <!-- Modern Voices -->
+  <section id="modern" class="section-light">
     <div class="container">
-      <h2 class="section-title">Echoes</h2>
+      <span class="section-eyebrow">Voices extending the tradition</span>
+      <h2 class="section-title">Modern Voices</h2>
       <p class="section-sub">
-        Select a modern concept and trace it back through time. Repetition or
-        reinvention?
+        Philosophers working today who are genuinely extending the tradition -
+        or at least making it breathe again.
       </p>
-      <div class="echoes-layout">
-        <div class="echoes-sidebar" id="echoSidebar"></div>
-        <div class="echoes-display" id="echoDisplay">
-          <div class="echo-placeholder">← Select a concept</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI & Philosophy -->
-  <section id="ai" class="section-light">
-    <div class="container">
-      <h2 class="section-title">The Machine Question</h2>
-      <p class="section-sub">
-        AI does not create new philosophical problems. It makes the old ones
-        impossible to ignore. Consciousness, identity, free will, meaning,
-        the crowd - every major thread in this archive is now running through
-        a server farm somewhere.
-      </p>
-
-      <div class="ai-pipeline">
-        <div class="pipeline-step">
-          <span class="pipeline-label">1st disruption</span>
-          <h4>Print &amp; Mass Media</h4>
-          <p>The crowd gets a voice. Kierkegaard panics.</p>
-        </div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-step">
-          <span class="pipeline-label">2nd disruption</span>
-          <h4>Social Media</h4>
-          <p>The crowd becomes the algorithm. Identity is performed, optimised, monetised.</p>
-        </div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-step pipeline-step--active">
-          <span class="pipeline-label">3rd disruption</span>
-          <h4>AI</h4>
-          <p>The algorithm starts thinking. Or does it? Philosophy cannot agree on what thinking even is.</p>
-        </div>
-      </div>
-
-      <div class="ai-questions" id="aiQuestions"></div>
-
-      <h3 class="ai-thinkers-title">Thinkers on the Threshold</h3>
-      <div class="ai-thinkers" id="aiThinkers"></div>
+      <div class="modern-grid" id="modernGrid"></div>
     </div>
   </section>
 

@@ -1,3 +1,177 @@
+/* ── Echoes accordion ── */
+function buildEchoes() {
+  const container = document.getElementById("echoesAccordion");
+
+  ECHOES.forEach((echo, i) => {
+    const el = document.createElement("div");
+    el.className = "echo-item";
+    el.style.setProperty("--echo-color", echo.color);
+
+    el.innerHTML = `
+      <div class="echo-item-header">
+        <div class="echo-item-left">
+          <span class="echo-item-num">${String(i + 1).padStart(2, "0")}</span>
+          <div>
+            <h3 class="echo-item-label">${echo.label}</h3>
+            <p class="echo-item-desc">${echo.description}</p>
+          </div>
+        </div>
+        <button class="echo-item-toggle" aria-label="expand">
+          <span class="toggle-icon">+</span>
+        </button>
+      </div>
+      <div class="echo-item-body">
+        <div class="echo-chain-new">
+          ${echo.chain.map((step, si) => `
+            <div class="echo-chain-step" style="--si:${si}">
+              <div class="echo-chain-left">
+                <div class="echo-chain-dot"></div>
+                ${si < echo.chain.length - 1 ? '<div class="echo-chain-line"></div>' : ''}
+              </div>
+              <div class="echo-chain-content">
+                <span class="echo-chain-era">${step.era}</span>
+                <strong class="echo-chain-figure">${step.figure}</strong>
+                <p class="echo-chain-text">${step.text}</p>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `;
+
+    const header = el.querySelector(".echo-item-header");
+    const body = el.querySelector(".echo-item-body");
+    const icon = el.querySelector(".toggle-icon");
+
+    header.addEventListener("click", () => {
+      const isOpen = el.classList.toggle("open");
+      icon.textContent = isOpen ? "−" : "+";
+      body.style.maxHeight = isOpen ? body.scrollHeight + "px" : "0";
+    });
+
+    if (i === 0) {
+      el.classList.add("open");
+      icon.textContent = "−";
+      setTimeout(() => { body.style.maxHeight = body.scrollHeight + "px"; }, 10);
+    }
+
+    container.appendChild(el);
+  });
+}
+
+/* ── AI Impacts ── */
+function buildAIImpacts() {
+  const container = document.getElementById("aiImpacts");
+  AI_IMPACTS.forEach(imp => {
+    const el = document.createElement("div");
+    el.className = "impact-card";
+    el.innerHTML = `
+      <div class="impact-top" style="border-left-color:${imp.color}">
+        <div class="impact-anchor">
+          <span class="impact-anchor-who" style="color:${imp.color}">${imp.anchor}</span>
+          <p class="impact-anchor-quote">"${imp.anchorText}"</p>
+        </div>
+        <h3 class="impact-title">${imp.title}</h3>
+      </div>
+      <div class="impact-body">
+        <p class="impact-now">${imp.now}</p>
+        <div class="impact-stakes">
+          <span class="stakes-label">Stakes</span>
+          <p>${imp.stakes}</p>
+        </div>
+      </div>
+    `;
+    container.appendChild(el);
+  });
+}
+
+/* ── AI Tradeoffs ── */
+function buildAITradeoffs() {
+  const container = document.getElementById("aiTradeoffs");
+  AI_TRADEOFFS.forEach(t => {
+    const el = document.createElement("div");
+    el.className = "tradeoff-card";
+    el.innerHTML = `
+      <div class="tradeoff-topic">${t.topic}</div>
+      <div class="tradeoff-split">
+        <div class="tradeoff-gain">
+          <span class="tradeoff-label gain-label">Gain</span>
+          <p>${t.gain}</p>
+        </div>
+        <div class="tradeoff-loss">
+          <span class="tradeoff-label loss-label">Loss</span>
+          <p>${t.loss}</p>
+        </div>
+      </div>
+      <div class="tradeoff-lens">
+        <span class="lens-icon">◎</span>
+        <p>${t.lens}</p>
+      </div>
+    `;
+    container.appendChild(el);
+  });
+}
+
+/* ── AI Questions ── */
+function buildAIQuestions() {
+  const container = document.getElementById("aiQuestions");
+  AI_QUESTIONS.forEach(q => {
+    const el = document.createElement("div");
+    el.className = "ai-question";
+    el.innerHTML = `
+      <div class="ai-question-header" style="border-left-color:${q.color}">
+        <span class="ai-icon" style="color:${q.color}">${q.icon}</span>
+        <div>
+          <h3>${q.question}</h3>
+          <p class="ai-anchor">${q.anchor}</p>
+        </div>
+        <span class="ai-q-toggle">+</span>
+      </div>
+      <div class="ai-positions">
+        ${q.positions.map(p => `
+          <div class="ai-position">
+            <strong style="color:${q.color}">${p.label}</strong>
+            <p>${p.text}</p>
+          </div>
+        `).join("")}
+      </div>
+    `;
+    const header = el.querySelector(".ai-question-header");
+    const positions = el.querySelector(".ai-positions");
+    const toggle = el.querySelector(".ai-q-toggle");
+    header.addEventListener("click", () => {
+      const open = el.classList.toggle("open");
+      toggle.textContent = open ? "−" : "+";
+      positions.style.maxHeight = open ? positions.scrollHeight + "px" : "0";
+    });
+    container.appendChild(el);
+  });
+}
+
+/* ── AI Thinkers ── */
+function buildAIThinkers() {
+  const container = document.getElementById("aiThinkers");
+  AI_THINKERS.forEach(t => {
+    const el = document.createElement("div");
+    el.className = "ai-thinker";
+    el.innerHTML = `
+      <div class="ai-thinker-top">
+        <div class="ai-thinker-avatar" style="background:${t.color}22;border-color:${t.color};color:${t.color}">
+          ${t.name.split(" ").map(w => w[0]).join("").slice(0, 2)}
+        </div>
+        <div>
+          <h4>${t.name}</h4>
+          <span class="ai-thinker-meta">${t.origin} · ${t.years}</span>
+        </div>
+        <span class="echo-badge">${t.echo}</span>
+      </div>
+      <p class="ai-thinker-tagline" style="color:${t.color}">${t.tagline}</p>
+      <p>${t.description}</p>
+    `;
+    container.appendChild(el);
+  });
+}
+
 /* ── Philosopher grid ── */
 function initials(name) {
   return name.split(" ").map(w => w[0]).join("").slice(0, 2).toUpperCase();
@@ -112,75 +286,9 @@ function buildDanishList() {
       <div class="danish-works">
         ${d.works.map(w => `<span class="work-tag">${w}</span>`).join("")}
       </div>
-      <div class="danish-echo">↩ Echo: ${d.echo}</div>
+      <div class="danish-echo">Echo: ${d.echo}</div>
     `;
     list.appendChild(el);
-  });
-}
-
-/* ── Echoes section ── */
-function buildEchoes() {
-  const sidebar = document.getElementById("echoSidebar");
-  const display = document.getElementById("echoDisplay");
-
-  ECHOES.forEach((echo, i) => {
-    const btn = document.createElement("button");
-    btn.className = "echo-btn";
-    btn.textContent = echo.label;
-    btn.style.setProperty("--echo-color", echo.color);
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".echo-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      renderEcho(echo, display);
-    });
-    sidebar.appendChild(btn);
-    if (i === 0) {
-      btn.classList.add("active");
-      renderEcho(echo, display);
-    }
-  });
-}
-
-function renderEcho(echo, display) {
-  display.innerHTML = `
-    <div class="echo-title" style="color:${echo.color}">${echo.label}</div>
-    <p class="echo-desc">${echo.description}</p>
-    <div class="echo-chain">
-      ${echo.chain.map((step, i) => `
-        <div class="echo-step" style="--step-color:${echo.color};--step-i:${i}">
-          <div class="echo-step-dot"></div>
-          <div class="echo-step-content">
-            <span class="echo-era">${step.era}</span>
-            <strong>${step.figure}</strong>
-            <p>${step.text}</p>
-          </div>
-        </div>
-      `).join("")}
-    </div>
-  `;
-}
-
-/* ── Scroll animations ── */
-function initScrollAnimations() {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add("visible");
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll(".era, .phil-card, .modern-card, .danish-item, .echo-step, .ai-question, .ai-thinker, .fav-card, .thread-node").forEach(el => {
-    observer.observe(el);
-  });
-}
-
-/* ── Nav smooth scroll ── */
-function initNav() {
-  document.querySelectorAll("a[href^='#']").forEach(a => {
-    a.addEventListener("click", e => {
-      e.preventDefault();
-      const target = document.querySelector(a.getAttribute("href"));
-      if (target) target.scrollIntoView({ behavior: "smooth" });
-    });
   });
 }
 
@@ -230,71 +338,40 @@ function buildFavourites() {
   });
 }
 
-/* ── AI Questions ── */
-function buildAIQuestions() {
-  const container = document.getElementById("aiQuestions");
-  AI_QUESTIONS.forEach(q => {
-    const el = document.createElement("div");
-    el.className = "ai-question";
-    el.innerHTML = `
-      <div class="ai-question-header" style="border-left-color:${q.color}">
-        <span class="ai-icon" style="color:${q.color}">${q.icon}</span>
-        <div>
-          <h3>${q.question}</h3>
-          <p class="ai-anchor">${q.anchor}</p>
-        </div>
-      </div>
-      <div class="ai-positions">
-        ${q.positions.map(p => `
-          <div class="ai-position">
-            <strong style="color:${q.color}">${p.label}</strong>
-            <p>${p.text}</p>
-          </div>
-        `).join("")}
-      </div>
-    `;
-    const header = el.querySelector(".ai-question-header");
-    const positions = el.querySelector(".ai-positions");
-    header.addEventListener("click", () => {
-      const open = positions.classList.toggle("open");
-      header.classList.toggle("expanded", open);
+/* ── Scroll animations ── */
+function initScrollAnimations() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add("visible");
     });
-    container.appendChild(el);
-  });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(
+    ".era, .phil-card, .modern-card, .danish-item, .ai-question, .ai-thinker, .fav-card, .thread-node, .echo-item, .impact-card, .tradeoff-card"
+  ).forEach(el => observer.observe(el));
 }
 
-/* ── AI Thinkers ── */
-function buildAIThinkers() {
-  const container = document.getElementById("aiThinkers");
-  AI_THINKERS.forEach(t => {
-    const el = document.createElement("div");
-    el.className = "ai-thinker";
-    el.innerHTML = `
-      <div class="ai-thinker-top">
-        <div class="ai-thinker-avatar" style="background:${t.color}22;border-color:${t.color};color:${t.color}">
-          ${t.name.split(" ").map(w => w[0]).join("").slice(0,2)}
-        </div>
-        <div>
-          <h4>${t.name}</h4>
-          <span class="ai-thinker-meta">${t.origin} · ${t.years}</span>
-        </div>
-        <span class="echo-badge">${t.echo}</span>
-      </div>
-      <p class="ai-thinker-tagline" style="color:${t.color}">${t.tagline}</p>
-      <p>${t.description}</p>
-    `;
-    container.appendChild(el);
+/* ── Nav smooth scroll ── */
+function initNav() {
+  document.querySelectorAll("a[href^='#']").forEach(a => {
+    a.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute("href"));
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    });
   });
 }
 
 /* ── Boot ── */
+buildEchoes();
+buildAIImpacts();
+buildAITradeoffs();
+buildAIQuestions();
+buildAIThinkers();
 buildPhilGrid();
 initFilters();
 buildModernGrid();
 buildDanishList();
-buildEchoes();
 buildFavourites();
-buildAIQuestions();
-buildAIThinkers();
 initScrollAnimations();
 initNav();

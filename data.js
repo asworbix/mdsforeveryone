@@ -423,6 +423,82 @@ const FAV_THREAD = [
   }
 ];
 
+const AI_IMPACTS = [
+  {
+    title: "The crowd, automated",
+    color: "#c8c89e",
+    anchor: "Kierkegaard, 1846",
+    anchorText: "The crowd is untruth. No one in a crowd is personally accountable.",
+    now: "Algorithmic feeds don't just amplify the crowd - they personalise it to each user, making it invisible. You cannot see that you are inside the machine. The crowd has never been more powerful precisely because it has never looked so individual.",
+    stakes: "When the feed predicts what you want to think before you think it, the 'leap' Kierkegaard demanded becomes structurally harder to make."
+  },
+  {
+    title: "Attention colonised",
+    color: "#8fa8c8",
+    anchor: "Pascal, 1670",
+    anchorText: "All of humanity's problems stem from man's inability to sit quietly in a room alone.",
+    now: "The attention economy industrialised distraction. AI has personalised it. The average person now encounters more persuasive stimuli per day than existed in a lifetime for most of human history. Quiet is a luxury. Boredom - philosophically essential - is nearly extinct.",
+    stakes: "Heidegger argued that anxiety in the face of nothingness was the gateway to authenticity. If that anxiety is permanently suppressed by content, what becomes of authentic existence?"
+  },
+  {
+    title: "Authorship blurred",
+    color: "#c8a97e",
+    anchor: "Nietzsche, 1882",
+    anchorText: "Every great philosophy is the personal confession of its author.",
+    now: "When a language model writes a philosophical essay indistinguishable from a human one, what is a 'personal confession'? AI-generated text reflects the statistical average of human expression - not the voice of an individual who has suffered, doubted and chosen. It is philosophy without a subject.",
+    stakes: "Rubin's entire philosophy rests on the honesty of the individual creative act. That act is now in question."
+  },
+  {
+    title: "Memory outsourced",
+    color: "#a8c89e",
+    anchor: "Plato, Phaedrus",
+    anchorText: "Writing will create forgetfulness in learners' souls - they will trust to external marks.",
+    now: "Plato's Socrates warned against writing for the same reason critics now warn against AI: externalising thought weakens the capacity for it. Search engines made memory optional. AI makes thinking optional. Each step externalises one more cognitive function.",
+    stakes: "If knowing how to find an answer replaces knowing the answer, and AI finding the answer replaces knowing how to find it - what remains of the examined life?"
+  },
+  {
+    title: "Meaning industrialised",
+    color: "#b89eb8",
+    anchor: "Frankl, 1946",
+    anchorText: "Man's search for meaning is the primary motivation in his life.",
+    now: "The meaning crisis is real and measurable: rising rates of depression, anxiety and purposelessness across the developed world, correlated with - though not simply caused by - the dominance of screen-mediated life. AI offers to solve this with personalised purpose: recommended careers, curated identities, optimised routines. It is meaning as a product.",
+    stakes: "Frankl found meaning in the concentration camp, where external freedom was zero. The question is whether AI-assisted comfort makes the inner search for meaning easier or whether comfort is itself the obstacle."
+  }
+];
+
+const AI_TRADEOFFS = [
+  {
+    topic: "Knowledge access",
+    gain: "Anyone, anywhere can access the sum of human knowledge instantly and for free.",
+    loss: "The discipline of not-knowing - sitting with a question, following a thread, being wrong for a long time - is disappearing.",
+    lens: "Socrates: wisdom begins with knowing you don't know. That moment of productive ignorance is being automated away."
+  },
+  {
+    topic: "Creative output",
+    gain: "The barrier to producing polished work has collapsed. Ideas can be realised without years of technical craft.",
+    loss: "Craft as a philosophical practice - the way mastery of a medium trains perception and patience - loses its necessity.",
+    lens: "Aristotle: virtue is formed through repeated action. If the action is outsourced, so is the formation."
+  },
+  {
+    topic: "Connection at scale",
+    gain: "AI-powered communication tools let individuals reach millions. Every voice can theoretically be heard.",
+    loss: "The signal-to-noise ratio collapses. Attention becomes the scarce resource and is captured by the most stimulating, not the most true.",
+    lens: "Kierkegaard: the public is a monstrous abstraction. The larger the audience, the less any individual is actually addressed."
+  },
+  {
+    topic: "Personalisation",
+    gain: "Experiences, information and interfaces can be tailored to the individual with precision no prior technology could match.",
+    loss: "Encountering the genuinely foreign - the idea that resists you, the book you did not choose - becomes optional. The algorithm confirms you.",
+    lens: "Heidegger: authentic existence requires confronting what you did not choose. Personalisation removes precisely that confrontation."
+  },
+  {
+    topic: "Efficiency",
+    gain: "Tasks that consumed human hours are compressed to seconds. Time is freed for higher-order activity.",
+    loss: "The time freed tends to be filled with more consumption. Efficiency creates capacity for meaning but does not supply it.",
+    lens: "Aristotle: leisure (skhole) is not the absence of work but the space for the highest activities. Efficiency is only valuable if we know what leisure is for."
+  }
+];
+
 const AI_QUESTIONS = [
   {
     id: "consciousness",
