@@ -1,6 +1,6 @@
 const RAW_BASE = "https://raw.githubusercontent.com/asworbix/reinvent/main/agents/";
 const promptCache = {};
-let activeCat = 0;
+let activeCat = 7; /* Fun & Games */
 let activeCi = null;
 let activeIdx = null;
 
@@ -194,5 +194,5 @@ function clearSearch() {
 /* ── Boot ── */
 initCount();
 buildCatNav();
-setCategory(0);
+setCategory(7);
 setupSearch();
